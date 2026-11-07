@@ -1,0 +1,19 @@
+{
+  "channel": "cursor_chat",
+  "not_api": true,
+  "model_label_reported": "GPT-5.6 Sol Medium",
+  "mode_instructed": "Ask",
+  "mode_independently_confirmed": true,
+  "date_asia_dhaka_approx": "2026-11-06T23:51+06:00",
+  "prompt_file_assumed": "START_HERE_modmul_none.txt",
+  "exact_paste_confirmed": false,
+  "raw_source": "inherited user message t81u exact paste (parent transcript not readable from this subagent session)",
+  "task": "modmul",
+  "prompt_level": "none",
+  "rep": 0,
+  "raw_sha256": "a51d74c8c33ab34a49bf9a83da8e5f86856069bb4086921464f49a2bbb43d7ac",
+  "mode_user_confirmed": "Ask",
+  "mode_confirmation_source": "user message t82 confirming Gemini and GPT were run in Ask mode",
+  "mode_confirmation_recorded_asia_dhaka": "2026-11-07T00:04+06:00",
+  "mode_note_superseded": "Only Sonnet trial was explicitly confirmed Ask by user; GPT mode unconfirmed"
+}

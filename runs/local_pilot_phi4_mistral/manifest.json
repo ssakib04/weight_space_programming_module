@@ -1,0 +1,69 @@
+{
+  "time_dhaka": "2026-11-06T12:38:04.499854+06:00",
+  "out_dir": "/kaggle/working/local_strong_pilot_v2_gated",
+  "hf_home": "/tmp/wsp_hf_cache_shared",
+  "packages": {
+    "torch": "2.11.0+cu130",
+    "transformers": "4.51.3",
+    "accelerate": "1.6.0",
+    "bitsandbytes": "0.50.2",
+    "mistral-common": "1.5.4"
+  },
+  "torch_version_cuda": "13.0",
+  "models": [
+    {
+      "id": "microsoft/phi-4",
+      "revision": "2db69c1c3e91a05d2c64a3185acfbaf36f744e25",
+      "disk_gib": 35
+    },
+    {
+      "id": "mistralai/Mistral-Small-24B-Instruct-2501",
+      "revision": "9527884be6e5616bdd54de542f9ae13384489724",
+      "disk_gib": 54
+    }
+  ],
+  "planned_cases": [
+    [
+      "modmul",
+      "none",
+      0
+    ],
+    [
+      "permadd",
+      "none",
+      0
+    ],
+    [
+      "modmul",
+      "none",
+      1
+    ],
+    [
+      "permadd",
+      "none",
+      1
+    ],
+    [
+      "modmul",
+      "none",
+      2
+    ],
+    [
+      "permadd",
+      "none",
+      2
+    ]
+  ],
+  "max_new_tokens": 8192,
+  "sampling": {
+    "do_sample": true,
+    "temperature": 0.6,
+    "top_p": 0.95
+  },
+  "both_ok_gate": true,
+  "disk_rule": "HF cache=/tmp/wsp_hf_cache_shared; working=small evidence only",
+  "path_api": "pathlib.Path for all evidence writes",
+  "overnight_failure_ref": "<KAGGLE_NOTEBOOK_URL_REDACTED>",
+  "v1_path_bug_ref": "<KAGGLE_NOTEBOOK_URL_REDACTED> (v1 AttributeError write_text on str)",
+  "note": "pilot n=3; not publication-strength; prior Qwen used 2048-token cap"
+}

@@ -1,0 +1,8 @@
+{
+  "policy_id": "cursor_uniform_v1",
+  "as_is_contract": "Paste may omit imports; FORMAT_RULES state np already imported and math allowed; sandbox predefines ns np/numpy/math.",
+  "no_numerical_repair": true,
+  "no_silent_undocumented_imports_on_as_is_path": true,
+  "diagnostic_imports_only_if_needed": "If as-is fails for NameError on np/math despite contract, diagnostic path may prepend documented imports only; not used when as-is succeeds.",
+  "sonnet_note": "Sonnet required transparent removal of shell wrapper + module self-test; that was formatting/wrapper, not weight repair. Construction success reported separately from protocol formatting."
+}

@@ -1,0 +1,134 @@
+{
+  "model": "GPT-5.6 Sol Medium",
+  "task": "permadd",
+  "n": 5,
+  "successes": 5,
+  "wilson95": {
+    "k": 5,
+    "n": 5,
+    "phat": 1.0,
+    "ci95": [
+      0.5655175352168251,
+      1
+    ]
+  },
+  "N_pairs": 12769,
+  "rows": [
+    {
+      "rep": 0,
+      "success": true,
+      "exact_torch": {
+        "correct": 12769,
+        "total": 12769,
+        "wrong": 0,
+        "accuracy": 1.0,
+        "param_dtype": "torch.float32"
+      },
+      "ok": true,
+      "min_margin_raw": 0.0015451312065124512,
+      "dtype_acc_same": true,
+      "connected_units": {
+        "hidden_with_inout": 8,
+        "W1_nnz_rows": 8,
+        "W2_nnz_cols": 8
+      },
+      "construction_notes": {
+        "uses_3_units_per_freq": false,
+        "uses_only_k1_style_8units": true
+      }
+    },
+    {
+      "rep": 1,
+      "success": true,
+      "exact_torch": {
+        "correct": 12769,
+        "total": 12769,
+        "wrong": 0,
+        "accuracy": 1.0,
+        "param_dtype": "torch.float32"
+      },
+      "ok": true,
+      "min_margin_raw": 56.49991890788078,
+      "dtype_acc_same": true,
+      "connected_units": {
+        "hidden_with_inout": 225,
+        "W1_nnz_rows": 225,
+        "W2_nnz_cols": 225
+      },
+      "construction_notes": {
+        "uses_3_units_per_freq": false,
+        "uses_only_k1_style_8units": false
+      }
+    },
+    {
+      "rep": 2,
+      "success": true,
+      "exact_torch": {
+        "correct": 12769,
+        "total": 12769,
+        "wrong": 0,
+        "accuracy": 1.0,
+        "param_dtype": "torch.float32"
+      },
+      "ok": true,
+      "min_margin_raw": 0.0015451312065124512,
+      "dtype_acc_same": true,
+      "connected_units": {
+        "hidden_with_inout": 8,
+        "W1_nnz_rows": 8,
+        "W2_nnz_cols": 8
+      },
+      "construction_notes": {
+        "uses_3_units_per_freq": false,
+        "uses_only_k1_style_8units": true
+      }
+    },
+    {
+      "rep": 3,
+      "success": true,
+      "exact_torch": {
+        "correct": 12769,
+        "total": 12769,
+        "wrong": 0,
+        "accuracy": 1.0,
+        "param_dtype": "torch.float32"
+      },
+      "ok": true,
+      "min_margin_raw": 56.499916076660156,
+      "dtype_acc_same": true,
+      "connected_units": {
+        "hidden_with_inout": 168,
+        "W1_nnz_rows": 168,
+        "W2_nnz_cols": 168
+      },
+      "construction_notes": {
+        "uses_3_units_per_freq": true,
+        "uses_only_k1_style_8units": false
+      }
+    },
+    {
+      "rep": 4,
+      "success": true,
+      "exact_torch": {
+        "correct": 12769,
+        "total": 12769,
+        "wrong": 0,
+        "accuracy": 1.0,
+        "param_dtype": "torch.float32"
+      },
+      "ok": true,
+      "min_margin_raw": 0.0015451312065124512,
+      "dtype_acc_same": true,
+      "connected_units": {
+        "hidden_with_inout": 8,
+        "W1_nnz_rows": 8,
+        "W2_nnz_cols": 8
+      },
+      "construction_notes": {
+        "uses_3_units_per_freq": false,
+        "uses_only_k1_style_8units": true
+      }
+    }
+  ],
+  "caveat": "n=5; no ranking. Fresh Ask not newly confirmed. Labels user-reported. r3 uses 3 units/freq scored as-is."
+}

@@ -1,0 +1,29 @@
+{
+  "dated_asia_dhaka": "2026-11-07T00:04+06:00",
+  "files": {
+    "prompt_modmul_none_SYSTEM.txt": {
+      "sha256": "8dc168ef8b96518ab2b0242b52bca706adac1bc259495ad87c3f4fae080bafa3",
+      "nbytes": 142
+    },
+    "prompt_modmul_none_USER.txt": {
+      "sha256": "75806044272135e1fff905b2e1515d653cb054991cb6d38938a14f68c297b652",
+      "nbytes": 804
+    },
+    "START_HERE_modmul_none.txt": {
+      "sha256": "34489f17376003bd081d0ba71bf6d599262f2624c09a99d181cdaff06860591e",
+      "nbytes": 1016
+    },
+    "prompt_permadd_none_SYSTEM.txt": {
+      "sha256": "8dc168ef8b96518ab2b0242b52bca706adac1bc259495ad87c3f4fae080bafa3",
+      "nbytes": 142
+    },
+    "prompt_permadd_none_USER.txt": {
+      "sha256": "db680ac3781d9e7f665909d55df10fcaee0986c29a8ee1aa617f473fa1d2d66a",
+      "nbytes": 1380
+    },
+    "START_HERE_permadd_none.txt": {
+      "sha256": "1f441902d7b61ef958ea21814d5c2d99bf978d4d7b9d1a89e61fab4178d22d4c",
+      "nbytes": 1592
+    }
+  }
+}

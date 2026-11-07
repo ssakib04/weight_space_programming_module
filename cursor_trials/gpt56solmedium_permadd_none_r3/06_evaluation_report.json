@@ -1,0 +1,81 @@
+{
+  "rep": 3,
+  "ok": true,
+  "success": true,
+  "all_acc": 1.0,
+  "error": null,
+  "error_kind": null,
+  "eval_wall_s": 0.23126011800195556,
+  "exact_torch": {
+    "correct": 12769,
+    "total": 12769,
+    "wrong": 0,
+    "accuracy": 1.0,
+    "param_dtype": "torch.float32"
+  },
+  "np64": {
+    "dtype": "<class 'numpy.float64'>",
+    "correct": 12769,
+    "total": 12769,
+    "wrong": 0,
+    "accuracy": 1.0,
+    "min_margin_raw": 56.49999999999612,
+    "mean_margin_raw": 57.99999999999989,
+    "finite_logits": true
+  },
+  "np32": {
+    "dtype": "<class 'numpy.float32'>",
+    "correct": 12769,
+    "total": 12769,
+    "wrong": 0,
+    "accuracy": 1.0,
+    "min_margin_raw": 56.499916076660156,
+    "mean_margin_raw": 57.9999885559082,
+    "finite_logits": true
+  },
+  "harness_margins": {
+    "mean_margin_raw": 57.99999421896096,
+    "min_margin_raw": 56.499916076660156,
+    "mean_margin_norm": 4.427771378895015,
+    "min_margin_norm": 4.372388472659563,
+    "mean_prob_margin": 1.0,
+    "min_prob_margin": 1.0
+  },
+  "weight_stats": {
+    "W1": {
+      "shape": [
+        256,
+        226
+      ],
+      "dtype": "float64",
+      "finite": true,
+      "min": -1.4139061405793538,
+      "max": 1.4141794032959119,
+      "nnz": 37856,
+      "sha256": "f50918aafe06f1598065f52bc6868ca0702d5e389afd858e543407ff986365cc"
+    },
+    "W2": {
+      "shape": [
+        113,
+        256
+      ],
+      "dtype": "float64",
+      "finite": true,
+      "min": -1.4141794032959119,
+      "max": 1.414179403295912,
+      "nnz": 18928,
+      "sha256": "bcfa0427f875eabbc2a6d776cbc7c25e9cbee9fc79a23b81d231ef86767d35e0"
+    }
+  },
+  "connected_units": {
+    "hidden_with_inout": 168,
+    "W1_nnz_rows": 168,
+    "W2_nnz_cols": 168
+  },
+  "weight_load_error": null,
+  "dtype_acc_same": true,
+  "construction_notes": {
+    "uses_3_units_per_freq": true,
+    "uses_only_k1_style_8units": false
+  }
+}

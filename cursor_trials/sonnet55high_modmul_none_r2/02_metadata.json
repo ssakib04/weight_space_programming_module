@@ -1,0 +1,16 @@
+{
+  "channel": "cursor_chat",
+  "model_label_reported": "Claude Sonnet 5.5 High",
+  "mode_instructed": "Ask",
+  "mode_fresh_chats_newly_confirmed_by_user": false,
+  "date_asia_dhaka_approx": "2026-11-07T00:12+06:00",
+  "task": "modmul",
+  "prompt_level": "none",
+  "rep": 2,
+  "user_visible_trial_index": 3,
+  "batch_source": "t88u",
+  "raw_sha256": "e64bf90b6477b1835176cb1766db497e5c68d38757ff19a5b3da70ee1905b841",
+  "prompt_file_assumed": "START_HERE_modmul_none.txt",
+  "exact_paste_confirmed": false,
+  "construction_primary_formatting_secondary": true
+}

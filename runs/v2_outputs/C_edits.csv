@@ -1,0 +1,7 @@
+task,target,acc_before,iters,acc_after
+modadd,damaged_oracle,0.2798182964324951,"[{'it': 0, 'acc': 1.0, 'in_tok': 1093, 'out_tok': 2345, 'cost_usd': 0.025636, 'latency_s': 17.57844339300027}]",1.0
+modadd,B_partial_r0,0.2504503130912781,"[{'it': 0, 'acc': 0.5044247508049011, 'in_tok': 1090, 'out_tok': 3835, 'cost_usd': 0.04053, 'latency_s': 29.395649351999964}, {'it': 1, 'acc': 1.0, 'in_tok': 1082, 'out_tok': 1645, 'cost_usd': 0.018614, 'latency_s': 14.200241225000354}]",1.0
+modadd,B_full_r1,0.5044247508049011,"[{'it': 0, 'acc': 1.0, 'in_tok': 1082, 'out_tok': 2311, 'cost_usd': 0.025274, 'latency_s': 18.97611697799948}]",1.0
+modadd,B_none_r2,0.5044247508049011,"[{'it': 0, 'acc': 0.5044247508049011, 'in_tok': 1087, 'out_tok': 2975, 'cost_usd': 0.031924, 'latency_s': 23.6190153080006}, {'it': 1, 'acc': 1.0, 'in_tok': 1082, 'out_tok': 2644, 'cost_usd': 0.028604, 'latency_s': 18.93564062800033}]",1.0
+modmul,damaged_oracle,0.2755899131298065,"[{'it': 0, 'acc': 1.0, 'in_tok': 1082, 'out_tok': 2329, 'cost_usd': 0.025454, 'latency_s': 18.295635247000973}]",1.0
+parity,damaged_oracle,0.50677490234375,"[{'it': 0, 'acc': 1.0, 'in_tok': 1094, 'out_tok': 1096, 'cost_usd': 0.013148, 'latency_s': 8.452864782999313}]",1.0

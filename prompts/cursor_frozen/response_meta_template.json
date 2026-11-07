@@ -1,0 +1,19 @@
+{
+  "channel": "cursor_chat",
+  "date_asia_dhaka": "YYYY-MM-DDTHH:MM:SS+06:00",
+  "model_label_exact": "paste UI model name",
+  "reasoning_or_effort_setting": "High|Medium|default|unknown|n/a",
+  "temperature_if_shown": null,
+  "task": "modmul",
+  "prompt_level": "none",
+  "rep": 0,
+  "fresh_chat": true,
+  "workspace_context_attached": false,
+  "tools_enabled": false,
+  "system_prompt_file": "prompt_modmul_none_SYSTEM.txt",
+  "user_prompt_file": "prompt_modmul_none_USER.txt",
+  "raw_response_file": "responses/<model_slug>_modmul_none_r0_raw.txt",
+  "truncated_or_incomplete_ui": false,
+  "notes": "Do not edit the raw response. Cursor hidden system prompt cannot be fully controlled.",
+  "api_equivalent": false
+}

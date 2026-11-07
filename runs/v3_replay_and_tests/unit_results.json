@@ -1,0 +1,257 @@
+[
+ [
+  "fenced oracle with imports + prose -> success",
+  true,
+  null
+ ],
+ [
+  "unfenced oracle with prose before/after -> success",
+  true,
+  "unfenced None"
+ ],
+ [
+  "```py fence -> success",
+  true,
+  ""
+ ],
+ [
+  "bare ``` fence -> success",
+  true,
+  ""
+ ],
+ [
+  "multiple fences (helper in another block) -> concatenated, success",
+  true,
+  "fences_concat None"
+ ],
+ [
+  "truncated reply (unclosed fence) -> error_kind truncated",
+  true,
+  "[syntax] SyntaxError: '(' was never closed (<generated>, line 5)"
+ ],
+ [
+  "complete code but stop_reason=max_tokens -> still evaluated, flagged",
+  true,
+  ""
+ ],
+ [
+  "no code -> no_code",
+  true,
+  "[no_code] no build_weights definition in reply"
+ ],
+ [
+  "wrong shape -> shape",
+  true,
+  "[shape] W1 shape (3, 3) != (256, 226)"
+ ],
+ [
+  "NaN weights -> nonfinite",
+  true,
+  ""
+ ],
+ [
+  "non-dict -> not_dict",
+  true,
+  "[not_dict] generated code failed: SANDBOX_NOT_DICT list\n"
+ ],
+ [
+  "wrong function name -> no_code/missing_fn",
+  true,
+  "no_code"
+ ],
+ [
+  "next/iter/zip/map/filter/sorted/... + itertools/functools imports + print -> success",
+  true,
+  null
+ ],
+ [
+  "infinite loop -> timeout",
+  true,
+  "timeout"
+ ],
+ [
+  "forbidden: import os -> blocked",
+  true,
+  "blocked: 'le>\\n  File \"<TMPDIR>/runner.py\", line 17, in _safe_import\\nImportError: import of \\'os\\' is blocked in the sandbox\\n'"
+ ],
+ [
+  "forbidden: import subprocess inside fn -> blocked",
+  true,
+  "blocked: 'le \"<TMPDIR>/runner.py\", line 17, in _safe_import\\nImportError: import of \\'subprocess\\' is blocked in the sandbox\\n'"
+ ],
+ [
+  "forbidden: open() -> blocked",
+  true,
+  "blocked: 'in build_weights\\n  File \"<TMPDIR>/runner.py\", line 30, in f\\nPermissionError: sandbox: builtin open() is blocked\\n'"
+ ],
+ [
+  "forbidden: np.load file read -> blocked",
+  true,
+  "blocked: '\\n  File \"<TMPDIR>/runner.py\", line 44, in _hook\\nPermissionError: sandbox: file access blocked (\\'/etc/hostname\\')\\n'"
+ ],
+ [
+  "forbidden: np.save file write -> blocked",
+  true,
+  "blocked: '  File \"<TMPDIR>/runner.py\", line 44, in _hook\\nPermissionError: sandbox: file access blocked (\\'/tmp/pwned.npy\\')\\n'"
+ ],
+ [
+  "forbidden: __import__('os') -> blocked",
+  true,
+  "blocked: 'hts\\n  File \"<TMPDIR>/runner.py\", line 17, in _safe_import\\nImportError: import of \\'os\\' is blocked in the sandbox\\n'"
+ ],
+ [
+  "forbidden: eval -> blocked",
+  true,
+  "blocked: 'in build_weights\\n  File \"<TMPDIR>/runner.py\", line 30, in f\\nPermissionError: sandbox: builtin eval() is blocked\\n'"
+ ],
+ [
+  "forbidden: subclass escape -> os.system -> blocked",
+  true,
+  "blocked: 'ld_weights\\n  File \"<TMPDIR>/runner.py\", line 46, in _hook\\nPermissionError: sandbox: blocked operation os.system\\n'"
+ ],
+ [
+  "forbidden: socket via numpy internals -> blocked",
+  true,
+  "blocked: '  File \"<TMPDIR>/runner.py\", line 17, in _safe_import\\nImportError: import of \\'socket\\' is blocked in the sandbox\\n'"
+ ],
+ [
+  "forbidden: relative import -> blocked",
+  true,
+  "blocked: 'dule>\\n  File \"<TMPDIR>/runner.py\", line 17, in _safe_import\\nImportError: import of \\'\\' is blocked in the sandbox\\n'"
+ ],
+ [
+  "env secret not passed (smoke)",
+  true,
+  ""
+ ],
+ [
+  "torch tensors returned -> converted",
+  true,
+  ""
+ ],
+ [
+  "edit_weights receives inputs",
+  true,
+  ""
+ ],
+ [
+  "oracle modmul via process_reply -> success",
+  true,
+  ""
+ ],
+ [
+  "oracle parity via process_reply -> success",
+  true,
+  ""
+ ],
+ [
+  "oracle permadd via process_reply -> success",
+  true,
+  ""
+ ],
+ [
+  "raw margin",
+  true,
+  ""
+ ],
+ [
+  "normalised margin = raw / logit std",
+  true,
+  ""
+ ],
+ [
+  "prob margin",
+  true,
+  ""
+ ],
+ [
+  "normalised margin is scale-invariant",
+  true,
+  ""
+ ],
+ [
+  "Wilson 7/10 = (0.397, 0.892)",
+  true,
+  "0.3968,0.8922"
+ ],
+ [
+  "Wilson 10/10 upper=1, lower 0.722",
+  true,
+  "0.7225"
+ ],
+ [
+  "Wilson n=0 -> nan",
+  true,
+  ""
+ ],
+ [
+  "t CI (n=3) = 4.303*1/sqrt3",
+  true,
+  ""
+ ],
+ [
+  "DRY_RUN: zero API calls, client never constructed, rows flagged dry_run_mock",
+  true,
+  ""
+ ],
+ [
+  "DRY_RUN: anthropic module never imported",
+  true,
+  ""
+ ],
+ [
+  "budget: calls stop before crossing section cap",
+  true,
+  "done=3 spent=$0.129 section B_algo cap: spent $0.129 + worst $0.061 > $0.15"
+ ],
+ [
+  "budget: spend recorded per section",
+  true,
+  ""
+ ],
+ [
+  "temperature rejection -> one retry, then no temperature",
+  true,
+  "fake calls 4 for 3 replies"
+ ],
+ [
+  "cache: re-running the same (model,prompt,rep) makes ZERO API calls",
+  true,
+  "0 new calls"
+ ],
+ [
+  "cache: cached rows cost $0 and give same result",
+  true,
+  ""
+ ],
+ [
+  "cache: truncated@6000 not reused for 12000",
+  true,
+  ""
+ ],
+ [
+  "total cap stops (worst-case pre-check)",
+  true,
+  "calls=0"
+ ],
+ [
+  "v3 prompts byte-identical to v2 prompts (cache validity)",
+  true,
+  "93/93"
+ ],
+ [
+  "v2-seeded cache: replaying 30 v2 modmul cases makes 0 API calls",
+  true,
+  "seeded=93"
+ ],
+ [
+  "v2-seeded cache result = offline replay (24/30 modmul success)",
+  true,
+  "24"
+ ],
+ [
+  "plan: cached reps cost $0, fresh reps priced; truncated v2 CIFAR r0? ",
+  true,
+  "     task prompt  rep  cached  section  worst_usd\n0  modmul   full    0    True   B_algo   0.000000\n1  modmul   full    1    True   B_algo   0.000000\n2  modmul   full   10   False   B_algo   0.060891\n3  modmul   full   11   False   B_algo   0.060891\n4   cifar   full    0    True  B_cifar   0.000000\n5   cifar   full   10   False  B_cifar   0.121087"
+ ]
+]

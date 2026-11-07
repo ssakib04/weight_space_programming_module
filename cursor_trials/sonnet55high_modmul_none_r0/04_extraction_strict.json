@@ -1,0 +1,8 @@
+{
+  "has_python_fence": false,
+  "has_shell_heredoc": true,
+  "has_build_weights_def": true,
+  "has_trailing_selftest_loop": true,
+  "strict_protocol_ok": false,
+  "reason": "Reply is a shell heredoc writing /tmp/t.py and invoking python3; not a Python-only build_weights code block as FORMAT_RULES require."
+}

@@ -1,0 +1,43 @@
+{
+  "time_dhaka": "2026-11-06T12:38:04.459071+06:00",
+  "both_ok": true,
+  "models": [
+    {
+      "model": "microsoft/phi-4",
+      "revision": "2db69c1c3e91a05d2c64a3185acfbaf36f744e25",
+      "time_start": "2026-11-06T12:26:30.065809+06:00",
+      "tmp_free_gib": 966.3840942382812,
+      "load_generate_ok": true,
+      "short_reply": "PREFLIGHT_OK",
+      "in_tok": 14,
+      "out_tok": 5,
+      "footprint_bytes": 8871782656,
+      "device_map_n": 44,
+      "time_end": "2026-11-06T12:31:01.263343+06:00",
+      "hf_home": "/tmp/wsp_hf_cache_shared"
+    },
+    {
+      "model": "mistralai/Mistral-Small-24B-Instruct-2501",
+      "revision": "9527884be6e5616bdd54de542f9ae13384489724",
+      "time_start": "2026-11-06T12:31:01.735860+06:00",
+      "tmp_free_gib": 939.013484954834,
+      "load_generate_ok": true,
+      "short_reply": "PREFLIGHT_OK",
+      "in_tok": 185,
+      "out_tok": 5,
+      "footprint_bytes": 13800089856,
+      "device_map_n": 44,
+      "time_end": "2026-11-06T12:38:03.952862+06:00",
+      "hf_home": "/tmp/wsp_hf_cache_shared"
+    }
+  ],
+  "hf_home": "/tmp/wsp_hf_cache_shared",
+  "out_dir": "/kaggle/working/local_strong_pilot_v2_gated",
+  "stack": {
+    "bitsandbytes": "0.50.2",
+    "torch": "2.11.0+cu130",
+    "torch_version_cuda": "13.0"
+  },
+  "disk_rule": "HF cache only at /tmp/wsp_hf_cache_shared; working holds small evidence only",
+  "path_fix": "OUT is pathlib.Path; write via OUT / name or write_json"
+}

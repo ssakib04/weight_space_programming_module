@@ -1,0 +1,86 @@
+{
+  "model": "Claude Sonnet 5.5 High",
+  "task": "modmul",
+  "prompt_level": "none",
+  "n": 5,
+  "successes": 4,
+  "wilson95": {
+    "k": 4,
+    "n": 5,
+    "phat": 0.8,
+    "ci95": [
+      0.37553462976252533,
+      0.9637758913675698
+    ]
+  },
+  "rows": [
+    {
+      "rep": 0,
+      "success": true,
+      "exact": {
+        "correct": 12544,
+        "total": 12544,
+        "wrong": 0,
+        "accuracy": 1.0
+      },
+      "note": "shell wrapper; diagnostic extraction"
+    },
+    {
+      "rep": 1,
+      "success": true,
+      "exact": {
+        "correct": 12544,
+        "total": 12544,
+        "wrong": 0,
+        "accuracy": 1.0,
+        "param_dtype": "torch.float32"
+      },
+      "ok": true,
+      "error_kind": null,
+      "min_margin_raw": 15.237360000610352
+    },
+    {
+      "rep": 2,
+      "success": true,
+      "exact": {
+        "correct": 12544,
+        "total": 12544,
+        "wrong": 0,
+        "accuracy": 1.0,
+        "param_dtype": "torch.float32"
+      },
+      "ok": true,
+      "error_kind": null,
+      "min_margin_raw": 55.99993896484375
+    },
+    {
+      "rep": 3,
+      "success": false,
+      "exact": {
+        "correct": 12320,
+        "total": 12544,
+        "wrong": 224,
+        "accuracy": 0.9821428571428571,
+        "param_dtype": "torch.float32"
+      },
+      "ok": true,
+      "error_kind": null,
+      "min_margin_raw": -16.872615814208984
+    },
+    {
+      "rep": 4,
+      "success": true,
+      "exact": {
+        "correct": 12544,
+        "total": 12544,
+        "wrong": 0,
+        "accuracy": 1.0,
+        "param_dtype": "torch.float32"
+      },
+      "ok": true,
+      "error_kind": null,
+      "min_margin_raw": 15.237360000610352
+    }
+  ],
+  "caveat": "n=5 small; no reliability ranking. Construction primary; r0 formatting was shell wrapper."
+}

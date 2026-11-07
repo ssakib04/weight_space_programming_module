@@ -1,0 +1,15 @@
+{
+  "channel": "cursor_chat",
+  "model_label_reported": "Claude Sonnet 5.5 High",
+  "mode_fresh_chats_newly_confirmed": false,
+  "date_asia_dhaka_approx": "2026-11-07T00:38+06:00",
+  "task": "permadd",
+  "prompt_level": "none",
+  "rep": 4,
+  "user_visible_index": 5,
+  "batch_source": "t91u",
+  "raw_sha256": "0d3e24f6c399e2fd637faab577fff30444f9ed9d8808e76a6eb1040a02fa72d9",
+  "VAL_matches_frozen": true,
+  "prompt_file_assumed": "START_HERE_permadd_none.txt",
+  "exact_paste_confirmed": false
+}

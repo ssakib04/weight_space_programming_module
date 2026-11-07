@@ -1,0 +1,72 @@
+device cpu | torch 2.15.0+cpu | out /tmp/wsp_t_6mwedaqd | QUICK False | MOCK False | RUN_CLAUDE False | DRY_RUN_CLAUDE True | budget $3.00
+modadd N = 12769 shapes {'W1': (256, 226), 'W2': (113, 256)}
+modmul N = 12544 shapes {'W1': (256, 226), 'W2': (113, 256)}
+parity N = 65536 shapes {'W1': (64, 16), 'b1': (64,), 'W2': (2, 64), 'b2': (2,)}
+permadd N = 12769 shapes {'W1': (256, 226), 'W2': (113, 256)}
+primitive root mod 113 = 3 | parity subset [2, 5, 10, 11, 12, 14]
+oracle modadd: acc 1.0000 | norm min margin 2.798 | prob margin 0.0074
+oracle modmul: acc 1.0000 | norm min margin 2.854 | prob margin 0.0075
+oracle parity: acc 1.0000 | norm min margin 1.414 | prob margin 0.7616
+oracle permadd: acc 1.0000 | norm min margin 2.798 | prob margin 0.0074
+cache dir /tmp/wsp_t_6mwedaqd/cache | seeded from v2 log: 0 | entries: 0
+torchvision CIFAR-10 failed: URLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1029)'))
+CIFAR source: CIFAR-10(hf-parquet) torch.Size([50000, 3, 32, 32])
+                           n  old_success new_success  old_valid  new_valid
+synth             task                                                     
+claude-sonnet-5-5 modadd  30           23          24         29         30
+                  modmul  30           10          24         10         26
+                  parity  30           30          30         30         30
+llama-3.1-8b      modadd   9            0           0          5          6
+                  modmul   9            0           0          2          3
+                  parity   9            0           0          1          1
+qwen2.5-coder-14b modadd   9            0           0          6          6
+                  modmul   9            0           0          7          7
+                  parity   9            0           0          6          7
+                 n  old new
+task   prompt              
+modadd full     10    7   8
+       none     10    7   7
+       partial  10    9   9
+modmul full     10    8   8
+       none     10    2   8
+       partial  10    0   8
+parity full     10   10  10
+       none     10   10  10
+       partial  10   10  10
+
+claude old failure kinds -> new outcome:
+old_err_kind  new_success
+              False           6
+fence_syntax  False           2
+name_error    False           2
+              True           14
+runtime       False           2
+              True            1
+dtype: int64
+      task   prompt  rep stop_reason  old_err_kind new_err_kind   new_acc                                                            new_err
+1   modadd  partial    0    end_turn                        NaN  0.250450                                                                   
+3   modmul     full    0  max_tokens       runtime    truncated  0.000000                   [truncated] no build_weights definition in reply
+9   modadd     full    1    end_turn                        NaN  0.504425                                                                   
+20  modadd     none    2    end_turn                        NaN  0.504425                                                                   
+21  modmul     full    2  max_tokens       runtime    truncated  0.000000                   [truncated] no build_weights definition in reply
+32  modmul     none    3  max_tokens  fence_syntax    truncated  0.000000  [syntax] SyntaxError: '(' was never closed (<generated>, line 18)
+38  modadd     none    4    end_turn                        NaN  0.504425                                                                   
+41  modmul     none    4    end_turn    name_error          NaN  0.008929                                                                   
+45  modadd     full    5    end_turn                        NaN  0.504425                                                                   
+49  modmul  partial    5    end_turn    name_error          NaN  0.508929                                                                   
+74  modadd     none    8    end_turn                        NaN  0.964602                                                                   
+76  modmul  partial    8  max_tokens  fence_syntax    truncated  0.000000        [syntax] SyntaxError: invalid syntax (<generated>, line 27)
+
+regressions (old success, new not): 0
+
+CIFAR:
+                 synth  rep stop_reason  old_err_kind  new_ok  new_acc new_err_kind extract_method                                                                                                                                                             new_err
+90   claude-sonnet-5-5    0    end_turn        syntax    True   0.1400          NaN  fence_with_fn                                                                                                                                                                    
+91   claude-sonnet-5-5    1  max_tokens  fence_syntax   False   0.0000    truncated  fence_with_fn                                                                                                   [syntax] SyntaxError: '(' was never closed (<generated>, line 76)
+92   claude-sonnet-5-5    2  max_tokens  fence_syntax   False   0.0000    truncated  fence_with_fn                                                                                                        [syntax] SyntaxError: invalid syntax (<generated>, line 100)
+120  qwen2.5-coder-14b    0         NaN       runtime   False   0.0000      runtime  fence_with_fn  [runtime] generated code failed: Traceback (most recent call last):\n  File "<TMPDIR>/runner.py", line 59, in <module>\n  File "<generated>", line 34, in 
+121  qwen2.5-coder-14b    1         NaN  fence_syntax   False   0.0000    truncated  fence_with_fn                                                                                                  [syntax] SyntaxError: '[' was never closed (<generated>, line 110)
+122  qwen2.5-coder-14b    2         NaN                  True   0.0999          NaN  fence_with_fn                                                                                                                                                                    
+150       llama-3.1-8b    0         NaN                  True   0.1000          NaN  fence_with_fn                                                                                                                                                                    
+151       llama-3.1-8b    1         NaN         shape   False   0.0000        shape  fence_with_fn                                                                                                              [shape] conv1.weight shape (12, 5, 5) != (32, 3, 5, 5)
+152       llama-3.1-8b    2         NaN                  True   0.1211          NaN  fence_with_fn                                                                                                                                                                    

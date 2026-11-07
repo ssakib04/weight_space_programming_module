@@ -1,0 +1,17 @@
+{
+  "channel": "cursor_chat",
+  "model_label_reported": "GPT-5.6 Sol Medium",
+  "mode_r0_ask_confirmed_t82": true,
+  "mode_fresh_chats_newly_confirmed": false,
+  "mode_note": "Ask confirmed for r0 (t82); r1-r4 batch fresh chats not newly confirmed",
+  "date_asia_dhaka_approx": "2026-11-07T00:20+06:00",
+  "task": "modmul",
+  "prompt_level": "none",
+  "rep": 1,
+  "user_visible_trial_index": 2,
+  "batch_source": "t90u",
+  "raw_sha256": "ca73bc24b835993773023fc2378b62d4a74c2b93d50b81a827febd92b412ec12",
+  "uses_builtin_next": true,
+  "prompt_file_assumed": "START_HERE_modmul_none.txt",
+  "exact_paste_confirmed": false
+}

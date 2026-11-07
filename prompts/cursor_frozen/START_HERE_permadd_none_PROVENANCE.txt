@@ -1,0 +1,10 @@
+Provenance
+- SYSTEM body = exact bytes of prompt_permadd_none_SYSTEM.txt
+- USER body = exact bytes of prompt_permadd_none_USER.txt (task_prompt("permadd","none"))
+- Delimiters identical scheme to START_HERE_modmul_none.txt
+- Combined file is ONE Cursor user-channel message; not true API system/user role fields
+- No algorithm hints added; prompt_level=none
+- Fixed VAL mapping in USER text is the study's fixed instance (reliability on one mapping); NOT a claim of novel held-out mapping or recall-proofing
+- system_sha256=8dc168ef8b96518ab2b0242b52bca706adac1bc259495ad87c3f4fae080bafa3
+- user_sha256=db680ac3781d9e7f665909d55df10fcaee0986c29a8ee1aa617f473fa1d2d66a
+- combined_sha256=1f441902d7b61ef958ea21814d5c2d99bf978d4d7b9d1a89e61fab4178d22d4c

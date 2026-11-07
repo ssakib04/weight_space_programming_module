@@ -1,0 +1,16 @@
+item,value
+"SPLIT (train,val,rest=test)","0.3, 0.1 (test 0.6)"
+Seeds A,"0,1,2"
+Algo checkpoints,"100,500,1000,3000,10000,20000"
+CIFAR checkpoints,"200,1000,3000 (from A_curves)"
+AdamW wd / betas,"1.0 / (0.9, 0.98)"
+SGD momentum / wd,0.9 / 1e-4
+Algo LR grid AdamW,"3e-4, 1e-3, 3e-3"
+Algo LR grid SGD,"0.03, 0.1, 0.3"
+CIFAR LR Adam / SGD,"3e-4,1e-3 / 0.01,0.05"
+Success threshold (algo B),accuracy >= 0.99 on all inputs
+API model id,claude-sonnet-5-5
+API algo max_tokens,6000
+Local Phi/Mistral max_new_tokens,8192
+Local Qwen max_new_tokens,2048 (caveat)
+Parity subset (seed 1234),"{2,5,10,11,12,14}"

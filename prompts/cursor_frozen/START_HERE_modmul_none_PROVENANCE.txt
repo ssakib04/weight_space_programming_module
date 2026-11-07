@@ -1,0 +1,7 @@
+Provenance
+- SYSTEM body = exact bytes of prompt_modmul_none_SYSTEM.txt (from v3_src/10_tasks.py SYSTEM_PROMPT)
+- USER body = exact bytes of prompt_modmul_none_USER.txt (from task_prompt("modmul","none"))
+- No algorithm hints added; prompt_level=none
+- Delimiters <<<BEGIN_SYSTEM>>> / <<<END_SYSTEM>>> / <<<BEGIN_USER>>> / <<<END_USER>>> are channel wrappers so ONE Cursor chat message can carry both roles. They are NOT part of the original API system/user fields.
+- Direct Anthropic/OpenAI-style API would send SYSTEM as the system parameter and USER as the user message without these delimiter lines.
+- Do not add paper/experiment framing, @files, or extra instructions when sending.

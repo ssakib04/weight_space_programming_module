@@ -1,0 +1,10 @@
+task,prompt,n,v2_success,v3_success
+modadd,full,10,7,8
+modadd,none,10,7,7
+modadd,partial,10,9,9
+modmul,full,10,8,8
+modmul,none,10,2,8
+modmul,partial,10,0,8
+parity,full,10,10,10
+parity,none,10,10,10
+parity,partial,10,10,10

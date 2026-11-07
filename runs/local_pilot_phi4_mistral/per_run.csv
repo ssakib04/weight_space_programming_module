@@ -1,0 +1,44 @@
+task,instance,synth,synth_model,prompt,rep,ok,success,all_acc,mean_margin_raw,min_margin_raw,mean_margin_norm,min_margin_norm,mean_prob_margin,min_prob_margin,acc_noise0.1,acc_noise0.3,acc_noise0.5,W1_rank,W1_eff_rank,W1_sparsity,W1_fro,W2_rank,W2_eff_rank,W2_sparsity,W2_fro,fourier_top10_energy,revision,in_tok,out_tok,stop_reason,reply_source,cost_usd,latency_s,error,error_kind,extract_n_fences,extract_truncated,extract_method,extract_compiles,incomplete
+modmul,B_oracle,oracle,analytic,-,0,True,True,1.0,0.3814042454338347,0.3814033269882202,2.854168067438348,2.8541615603604953,0.007540777883901133,0.007540758534811967,0.8929368853569031,0.03977997601032257,0.016820790246129036,112.0,112.00000760479328,0.04341814159292035,167.99999908053655,56.0,56.000006758790356,0.04341814159292035,0.942809038622283,0.35714285930461354,,,,,,,,,,,,,,
+permadd,B_oracle,oracle,analytic,-,0,True,True,1.0,0.3755324739186483,0.3755313754081726,2.797765385757854,2.797757542644215,0.007444382710290555,0.00744436021214704,0.8756362795829773,0.036416321992874146,0.015506303869187832,112.0,112.00000754213585,0.015625,168.74833369843995,56.0,56.000005597945695,0.015625,0.9470086607215464,0.3571428571428571,,,,,,,,,,,,,,
+modmul,B,microsoft/phi-4,,none,0,True,False,0.008848852477967739,0.0,0.0,0.0,0.0,0.0,0.0,0.008928571827709675,0.008928571827709675,0.008928571827709675,113.0,13.865662145325532,0.5644358407079646,158.74507866387543,113.0,112.99999998723099,0.99609375,10.63014581273465,0.17857142857142863,2db69c1c3e91a05d2c64a3185acfbaf36f744e25,270.0,716.0,end_turn,local,0.0,61.12521258400011,,,1.0,False,fence_with_fn,True,False
+permadd,B,microsoft/phi-4,,none,0,True,False,0.008771242573857307,-3.308011590570914,-192.0,-0.18564668464561254,-10.630145812734646,-0.01746417103923565,-1.0,0.008849557489156723,0.008849557489156723,0.008849557489156723,1.0,0.9999999999989999,0.9999308628318584,8.0,113.0,99.04228928147157,0.9834070796460177,45.16635916254486,0.17857142857142852,2db69c1c3e91a05d2c64a3185acfbaf36f744e25,630.0,1062.0,end_turn,local,0.0,98.80917566900007,,,1.0,False,fence_with_fn,True,False
+modmul,B,microsoft/phi-4,,none,1,False,False,0.0,,,,,,,,,,,,,,,,,,,2db69c1c3e91a05d2c64a3185acfbaf36f744e25,270.0,729.0,end_turn,local,0.0,62.62988985899983,"[runtime] generated code failed: Traceback (most recent call last):
+  File ""<TMPDIR>/runner.py"", line 54, in <module>
+  File ""<generated>"", line 37, in <module>
+  File ""<generated>"", line 32, in build_weights
+IndexError: index 226 is out of bounds for axis 1 with size 226
+",runtime,1.0,False,fence_with_fn,True,False
+permadd,B,microsoft/phi-4,,none,1,False,False,0.0,,,,,,,,,,,,,,,,,,,2db69c1c3e91a05d2c64a3185acfbaf36f744e25,630.0,1039.0,end_turn,local,0.0,96.67262374799998,"[runtime] generated code failed: Traceback (most recent call last):
+  File ""<TMPDIR>/runner.py"", line 59, in <module>
+  File ""<generated>"", line 12, in build_weights
+ValueError: base is not invertible for the given modulus
+",runtime,1.0,False,fence_with_fn,True,False
+modmul,B,microsoft/phi-4,,none,2,True,False,0.008928571827709675,-353003203282476.44,-1746475973345280.0,-1.470308017895567,-2.981088525545311,-0.9821428571428571,-1.0,0.008928571827709675,0.008928571827709675,0.008928571827709675,161.0,13.910008838848158,0.008849557522123894,873779.7488738142,112.0,13.551954827713097,0.008849557522123894,30425318.787217665,0.6796616351115734,2db69c1c3e91a05d2c64a3185acfbaf36f744e25,270.0,699.0,end_turn,local,0.0,59.43037335300005,,,1.0,False,fence_with_fn,True,False
+permadd,B,microsoft/phi-4,,none,2,False,False,0.0,,,,,,,,,,,,,,,,,,,2db69c1c3e91a05d2c64a3185acfbaf36f744e25,630.0,994.0,end_turn,local,0.0,91.78114914100001,"[shape] generated code failed: Traceback (most recent call last):
+  File ""<TMPDIR>/runner.py"", line 59, in <module>
+  File ""<generated>"", line 32, in build_weights
+ValueError: could not broadcast input array from shape (226,) into shape (256,)
+",shape,1.0,False,fence_with_fn,True,False
+modmul,B,mistralai/Mistral-Small-24B-Instruct-2501,,none,0,False,False,0.0,,,,,,,,,,,,,,,,,,,9527884be6e5616bdd54de542f9ae13384489724,298.0,267.0,end_turn,local,0.0,34.045843976000015,"[shape] generated code failed: Traceback (most recent call last):
+  File ""<TMPDIR>/runner.py"", line 59, in <module>
+  File ""<generated>"", line 29, in build_weights
+ValueError: could not broadcast input array from shape (256,) into shape (113,)
+",shape,1.0,False,fence_with_fn,True,False
+permadd,B,mistralai/Mistral-Small-24B-Instruct-2501,,none,0,False,False,0.0,,,,,,,,,,,,,,,,,,,9527884be6e5616bdd54de542f9ae13384489724,772.0,783.0,end_turn,local,0.0,103.75948585599986,"[runtime] generated code failed: Traceback (most recent call last):
+  File ""<TMPDIR>/runner.py"", line 59, in <module>
+  File ""<generated>"", line 22, in build_weights
+IndexError: too many indices for array: array is 2-dimensional, but 3 were indexed
+",runtime,1.0,False,fence_with_fn,True,False
+modmul,B,mistralai/Mistral-Small-24B-Instruct-2501,,none,1,True,False,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,,0.0,0.0,1.0,,0.0,9527884be6e5616bdd54de542f9ae13384489724,298.0,328.0,end_turn,local,0.0,41.45283182899993,,,1.0,False,fence_with_fn,True,False
+permadd,B,mistralai/Mistral-Small-24B-Instruct-2501,,none,1,True,False,0.008849557489156723,0.0,0.0,0.0,0.0,0.0,0.0,0.008849557489156723,0.008849557489156723,0.008849557489156723,1.0,1.0000000000002351,0.9911504424778761,22.627416997969522,1.0,0.9999999999990047,0.0,680.3293320150176,0.17857142857142855,9527884be6e5616bdd54de542f9ae13384489724,772.0,711.0,end_turn,local,0.0,93.69286734100001,,,1.0,False,fence_with_fn,True,False
+modmul,B,mistralai/Mistral-Small-24B-Instruct-2501,,none,2,False,False,0.0,,,,,,,,,,,,,,,,,,,9527884be6e5616bdd54de542f9ae13384489724,298.0,173.0,end_turn,local,0.0,22.279002039999796,"[runtime] generated code failed: Traceback (most recent call last):
+  File ""<TMPDIR>/runner.py"", line 59, in <module>
+  File ""<generated>"", line 13, in build_weights
+OverflowError: math range error
+",runtime,1.0,False,fence_with_fn,True,False
+permadd,B,mistralai/Mistral-Small-24B-Instruct-2501,,none,2,False,False,0.0,,,,,,,,,,,,,,,,,,,9527884be6e5616bdd54de542f9ae13384489724,772.0,714.0,end_turn,local,0.0,94.71526204600013,"[shape] generated code failed: Traceback (most recent call last):
+  File ""<TMPDIR>/runner.py"", line 59, in <module>
+  File ""<generated>"", line 23, in build_weights
+ValueError: could not broadcast input array from shape (226,) into shape (256,)
+",shape,1.0,False,fence_with_fn,True,False

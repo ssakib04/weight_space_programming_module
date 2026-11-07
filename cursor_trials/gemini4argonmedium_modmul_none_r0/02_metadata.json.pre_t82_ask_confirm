@@ -1,0 +1,16 @@
+{
+  "channel": "cursor_chat",
+  "not_api": true,
+  "model_label_reported": "Gemini 4 Argon Medium",
+  "mode_instructed": "Ask",
+  "mode_independently_reconfirmed": false,
+  "date_asia_dhaka_approx": "2026-11-06T23:47+06:00",
+  "prompt_file_assumed": "START_HERE_modmul_none.txt",
+  "exact_paste_confirmed": false,
+  "task": "modmul",
+  "prompt_level": "none",
+  "rep": 0,
+  "raw_sha256": "f10b0d4de50ebc4766fbe173f15c519c164201fbacec01a4ec6e75602a302060",
+  "source": "user message t79u exact pasted function in inherited context",
+  "user_policy_t77": "construction success primary; output format secondary"
+}

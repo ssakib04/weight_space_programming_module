@@ -1,0 +1,46 @@
+task,instance,synthesizer,hint,n,successes,success_rate,wilson_lo,wilson_hi,mean_acc,valid_code_rate,truncated,wrong_weights,data_source
+modadd,B,Claude (claude-sonnet-5-5),full,10,8,0.8,0.49015684672072335,0.9433190520193067,0.9008849501609802,1.0,0.0,2.0,v2 replies replayed in v3 harness
+modadd,B,Claude (claude-sonnet-5-5),partial,10,9,0.9,0.5958436145024278,0.9821242504842788,0.9250450313091279,1.0,0.0,1.0,v2 replies replayed in v3 harness
+modadd,B,Claude (claude-sonnet-5-5),none,10,7,0.7,0.39677321997956516,0.892210712513788,0.8973451256752014,1.0,0.0,3.0,v2 replies replayed in v3 harness
+modmul,B,Claude (claude-sonnet-5-5),full,15,12,0.8,0.5481406466534955,0.9295257935638959,0.8002976202095549,0.8666666666666667,2.0,1.0,v2 replies replayed in v3 harness + Run 2 fresh reps 10-14
+modmul,B,Claude (claude-sonnet-5-5),partial,15,13,0.8666666666666667,0.6211750079348376,0.9626395301086407,0.900595239798228,0.9333333333333333,1.0,1.0,v2 replies replayed in v3 harness + Run 2 fresh reps 10-14
+modmul,B,Claude (claude-sonnet-5-5),none,15,13,0.8666666666666667,0.6211750079348376,0.9626395301086407,0.867261904788514,0.9333333333333333,1.0,1.0,v2 replies replayed in v3 harness + Run 2 fresh reps 10-14
+parity,B,Claude (claude-sonnet-5-5),full,10,10,1.0,0.7224598312333834,1.0,1.0,1.0,0.0,0.0,v2 replies replayed in v3 harness
+parity,B,Claude (claude-sonnet-5-5),partial,10,10,1.0,0.7224598312333834,1.0,1.0,1.0,0.0,0.0,v2 replies replayed in v3 harness
+parity,B,Claude (claude-sonnet-5-5),none,10,10,1.0,0.7224598312333834,1.0,1.0,1.0,0.0,0.0,v2 replies replayed in v3 harness
+modadd,A,"adamw (lr=0.0003, 20000 steps, 28.1s GPU)",-,3,3,1.0,0.43849391955098227,1.0,1.0,1.0,,,Run 1 (v3_run1_outputs/comparison_table.csv)
+modadd,A,"sgd (lr=0.3, 20000 steps, 25.1s GPU)",-,3,0,0.0,0.0,0.5615060804490177,0.9038545290629069,1.0,,,Run 1 (v3_run1_outputs/comparison_table.csv)
+modadd,B,"Qwen2.5-7B-Instruct (4-bit, local)",full,3,0,0.0,0.0,0.5615060804490177,0.0029498524963855743,0.3333333333333333,,,Run 1 (v3_run1_outputs/comparison_table.csv)
+modadd,B,"Qwen2.5-7B-Instruct (4-bit, local)",none,3,0,0.0,0.0,0.5615060804490177,0.008849557489156723,1.0,,,Run 1 (v3_run1_outputs/comparison_table.csv)
+modadd,B,"Qwen2.5-7B-Instruct (4-bit, local)",partial,3,0,0.0,0.0,0.5615060804490177,0.005273187688241403,0.6666666666666666,,,Run 1 (v3_run1_outputs/comparison_table.csv)
+modadd,B,"Qwen2.5-Coder-14B-Instruct (4-bit, local)",full,3,0,0.0,0.0,0.5615060804490177,0.0029498524963855743,0.3333333333333333,,,Run 1 (v3_run1_outputs/comparison_table.csv)
+modadd,B,"Qwen2.5-Coder-14B-Instruct (4-bit, local)",none,3,0,0.0,0.0,0.5615060804490177,0.0,0.0,,,Run 1 (v3_run1_outputs/comparison_table.csv)
+modadd,B,"Qwen2.5-Coder-14B-Instruct (4-bit, local)",partial,3,0,0.0,0.0,0.5615060804490177,0.008771242884298166,1.0,,,Run 1 (v3_run1_outputs/comparison_table.csv)
+modadd,B_oracle,oracle (hand-written reference),-,1,1,1.0,0.20654329147389294,1.0,1.0,1.0,,,Run 1 (v3_run1_outputs/comparison_table.csv)
+modmul,A,"adamw (lr=0.0003, 20000 steps, 27.8s GPU)",-,3,3,1.0,0.43849391955098227,1.0,1.0,1.0,,,Run 1 (v3_run1_outputs/comparison_table.csv)
+modmul,A,"sgd (lr=0.3, 20000 steps, 25.2s GPU)",-,3,0,0.0,0.0,0.5615060804490177,0.9207297960917155,1.0,,,Run 1 (v3_run1_outputs/comparison_table.csv)
+modmul,B,"Qwen2.5-7B-Instruct (4-bit, local)",full,3,0,0.0,0.0,0.5615060804490177,0.0059789543350537615,0.6666666666666666,,,Run 1 (v3_run1_outputs/comparison_table.csv)
+modmul,B,"Qwen2.5-7B-Instruct (4-bit, local)",none,3,0,0.0,0.0,0.5615060804490177,5.3146257414482534e-05,0.3333333333333333,,,Run 1 (v3_run1_outputs/comparison_table.csv)
+modmul,B,"Qwen2.5-7B-Instruct (4-bit, local)",partial,3,0,0.0,0.0,0.5615060804490177,0.0,0.6666666666666666,,,Run 1 (v3_run1_outputs/comparison_table.csv)
+modmul,B,"Qwen2.5-Coder-14B-Instruct (4-bit, local)",full,3,0,0.0,0.0,0.5615060804490177,0.0029761906092365584,0.6666666666666666,,,Run 1 (v3_run1_outputs/comparison_table.csv)
+modmul,B,"Qwen2.5-Coder-14B-Instruct (4-bit, local)",none,3,0,0.0,0.0,0.5615060804490177,0.0,0.6666666666666666,,,Run 1 (v3_run1_outputs/comparison_table.csv)
+modmul,B,"Qwen2.5-Coder-14B-Instruct (4-bit, local)",partial,3,0,0.0,0.0,0.5615060804490177,0.005952381218473117,0.6666666666666666,,,Run 1 (v3_run1_outputs/comparison_table.csv)
+modmul,B_oracle,oracle (hand-written reference),-,1,1,1.0,0.20654329147389294,1.0,1.0,1.0,,,Run 1 (v3_run1_outputs/comparison_table.csv)
+parity,A,"adamw (lr=0.001, 20000 steps, 28.9s GPU)",-,3,3,1.0,0.43849391955098227,1.0,0.9999745686848959,1.0,,,Run 1 (v3_run1_outputs/comparison_table.csv)
+parity,A,"sgd (lr=0.03, 20000 steps, 26.2s GPU)",-,3,3,1.0,0.43849391955098227,1.0,1.0,1.0,,,Run 1 (v3_run1_outputs/comparison_table.csv)
+parity,B,"Qwen2.5-7B-Instruct (4-bit, local)",full,3,0,0.0,0.0,0.5615060804490177,0.0,0.0,,,Run 1 (v3_run1_outputs/comparison_table.csv)
+parity,B,"Qwen2.5-7B-Instruct (4-bit, local)",none,3,0,0.0,0.0,0.5615060804490177,0.0,0.0,,,Run 1 (v3_run1_outputs/comparison_table.csv)
+parity,B,"Qwen2.5-7B-Instruct (4-bit, local)",partial,3,0,0.0,0.0,0.5615060804490177,0.16666666666666666,0.3333333333333333,,,Run 1 (v3_run1_outputs/comparison_table.csv)
+parity,B,"Qwen2.5-Coder-14B-Instruct (4-bit, local)",full,3,0,0.0,0.0,0.5615060804490177,0.5,1.0,,,Run 1 (v3_run1_outputs/comparison_table.csv)
+parity,B,"Qwen2.5-Coder-14B-Instruct (4-bit, local)",none,3,0,0.0,0.0,0.5615060804490177,0.19270833333333334,0.3333333333333333,,,Run 1 (v3_run1_outputs/comparison_table.csv)
+parity,B,"Qwen2.5-Coder-14B-Instruct (4-bit, local)",partial,3,0,0.0,0.0,0.5615060804490177,0.5260416666666666,1.0,,,Run 1 (v3_run1_outputs/comparison_table.csv)
+parity,B_oracle,oracle (hand-written reference),-,1,1,1.0,0.20654329147389294,1.0,1.0,1.0,,,Run 1 (v3_run1_outputs/comparison_table.csv)
+permadd,A,"adamw (lr=0.0003, 20000 steps, 27.6s GPU)",-,3,3,1.0,0.43849391955098227,1.0,1.0,1.0,,,Run 1 (v3_run1_outputs/comparison_table.csv)
+permadd,A,"sgd (lr=0.3, 20000 steps, 24.9s GPU)",-,3,0,0.0,0.0,0.5615060804490177,0.8769250909487406,1.0,,,Run 1 (v3_run1_outputs/comparison_table.csv)
+permadd,B,"Qwen2.5-7B-Instruct (4-bit, local)",full,3,0,0.0,0.0,0.5615060804490177,0.0,0.0,,,Run 1 (v3_run1_outputs/comparison_table.csv)
+permadd,B,"Qwen2.5-7B-Instruct (4-bit, local)",none,3,0,0.0,0.0,0.5615060804490177,0.0028193279479940734,0.3333333333333333,,,Run 1 (v3_run1_outputs/comparison_table.csv)
+permadd,B,"Qwen2.5-7B-Instruct (4-bit, local)",partial,3,0,0.0,0.0,0.5615060804490177,0.0,0.0,,,Run 1 (v3_run1_outputs/comparison_table.csv)
+permadd,B,"Qwen2.5-Coder-14B-Instruct (4-bit, local)",full,3,0,0.0,0.0,0.5615060804490177,0.0029498524963855743,0.3333333333333333,,,Run 1 (v3_run1_outputs/comparison_table.csv)
+permadd,B,"Qwen2.5-Coder-14B-Instruct (4-bit, local)",none,3,0,0.0,0.0,0.5615060804490177,0.0,0.0,,,Run 1 (v3_run1_outputs/comparison_table.csv)
+permadd,B,"Qwen2.5-Coder-14B-Instruct (4-bit, local)",partial,3,0,0.0,0.0,0.5615060804490177,0.0,0.0,,,Run 1 (v3_run1_outputs/comparison_table.csv)
+permadd,B_oracle,oracle (hand-written reference),-,1,1,1.0,0.20654329147389294,1.0,1.0,1.0,,,Run 1 (v3_run1_outputs/comparison_table.csv)

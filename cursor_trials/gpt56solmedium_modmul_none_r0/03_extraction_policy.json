@@ -1,0 +1,7 @@
+{
+  "policy_id": "cursor_uniform_v1",
+  "construction_primary_formatting_secondary": true,
+  "np_math_preprovided_by_contract": true,
+  "no_numerical_repair": true,
+  "no_silent_import_injection_on_as_is": true
+}

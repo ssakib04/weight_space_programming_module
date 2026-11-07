@@ -1,0 +1,14 @@
+{
+  "model": "microsoft/phi-4",
+  "revision": "2db69c1c3e91a05d2c64a3185acfbaf36f744e25",
+  "time_start": "2026-11-06T12:26:30.065809+06:00",
+  "tmp_free_gib": 966.3840942382812,
+  "load_generate_ok": true,
+  "short_reply": "PREFLIGHT_OK",
+  "in_tok": 14,
+  "out_tok": 5,
+  "footprint_bytes": 8871782656,
+  "device_map_n": 44,
+  "time_end": "2026-11-06T12:31:01.263343+06:00",
+  "hf_home": "/tmp/wsp_hf_cache_shared"
+}

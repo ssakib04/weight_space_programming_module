@@ -1,0 +1,15 @@
+{
+  "channel": "cursor_chat",
+  "model_label_reported": "Gemini 4 Argon Medium",
+  "mode_fresh_chats_newly_confirmed": false,
+  "date_asia_dhaka_approx": "2026-11-07T00:46+06:00",
+  "task": "permadd",
+  "prompt_level": "none",
+  "rep": 1,
+  "user_visible_index": 2,
+  "batch_source": "t92u",
+  "raw_sha256": "6566f2560379ea7b5e61f64ffc9903c32e62e80cb4317a1213409378582af872",
+  "VAL_matches_frozen": true,
+  "prompt_file_assumed": "START_HERE_permadd_none.txt",
+  "exact_paste_confirmed": false
+}

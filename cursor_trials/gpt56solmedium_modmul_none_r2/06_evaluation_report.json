@@ -1,0 +1,97 @@
+{
+  "rep": 2,
+  "ok": true,
+  "success": true,
+  "all_acc": 1.0,
+  "error": null,
+  "error_kind": null,
+  "eval_wall_s": 0.19893921100447187,
+  "exact_torch": {
+    "correct": 12544,
+    "total": 12544,
+    "wrong": 0,
+    "accuracy": 1.0,
+    "param_dtype": "torch.float32"
+  },
+  "np64": {
+    "dtype": "<class 'numpy.float64'>",
+    "correct": 12544,
+    "total": 12544,
+    "wrong": 0,
+    "accuracy": 1.0,
+    "min_margin_raw": 0.0015731849821829513,
+    "mean_margin_raw": 0.0015731849821833815,
+    "finite_logits": true
+  },
+  "np32": {
+    "dtype": "<class 'numpy.float32'>",
+    "correct": 12544,
+    "total": 12544,
+    "wrong": 0,
+    "accuracy": 1.0,
+    "min_margin_raw": 0.0015728473663330078,
+    "mean_margin_raw": 0.0015731554012745619,
+    "finite_logits": true
+  },
+  "harness_margins": {
+    "mean_margin_raw": 0.001573155444039374,
+    "min_margin_raw": 0.0015728473663330078,
+    "mean_margin_norm": 0.002224777821839603,
+    "min_margin_norm": 0.0022243418174900053,
+    "mean_prob_margin": 2.9922524624203037e-05,
+    "min_prob_margin": 2.99166666040164e-05
+  },
+  "weight_stats": {
+    "W1": {
+      "shape": [
+        256,
+        226
+      ],
+      "dtype": "float64",
+      "finite": true,
+      "min": -1.0,
+      "max": 1.0,
+      "nnz": 1784,
+      "sha256": "730a73257580c90fe22fc41a6907cba623576658786b1066f607388f358953ba"
+    },
+    "W2": {
+      "shape": [
+        113,
+        256
+      ],
+      "dtype": "float64",
+      "finite": true,
+      "min": -0.25,
+      "max": 0.25,
+      "nnz": 892,
+      "sha256": "c394df25ab61a3536e1bfd6e655aaf6ae60bf028dc6f6a3ea668e88af3f2397d"
+    }
+  },
+  "weight_load_error": null,
+  "connected": {
+    "W1_nonzero_rows": 8,
+    "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "W2_nonzero_cols": 8,
+    "n_connected": 8,
+    "connected_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ]
+  },
+  "dtype_acc_same": true
+}

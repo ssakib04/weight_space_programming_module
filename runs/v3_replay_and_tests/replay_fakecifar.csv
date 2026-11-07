@@ -1,0 +1,192 @@
+synth,task,prompt,rep,stop_reason,old_ok,old_acc,old_success,old_err_kind,new_ok,new_acc,new_success,new_err_kind,extract_method,new_err
+claude-sonnet-5-5,modadd,full,0,end_turn,True,1.0,True,,True,1.0,True,,fence_with_fn,
+claude-sonnet-5-5,modadd,partial,0,end_turn,True,0.2504503130912781,False,,True,0.2504503130912781,False,,fence_with_fn,
+claude-sonnet-5-5,modadd,none,0,end_turn,True,1.0,True,,True,1.0,True,,fence_with_fn,
+claude-sonnet-5-5,modmul,full,0,max_tokens,False,0.0,False,runtime,False,0.0,False,truncated,raw,[truncated] no build_weights definition in reply
+claude-sonnet-5-5,modmul,partial,0,end_turn,False,0.0,False,name_error,True,1.0,True,,fence_with_fn,
+claude-sonnet-5-5,modmul,none,0,end_turn,True,1.0,True,,True,1.0,True,,fence_with_fn,
+claude-sonnet-5-5,parity,full,0,end_turn,True,1.0,True,,True,1.0,True,,fence_with_fn,
+claude-sonnet-5-5,parity,partial,0,end_turn,True,1.0,True,,True,1.0,True,,fence_with_fn,
+claude-sonnet-5-5,parity,none,0,end_turn,True,1.0,True,,True,1.0,True,,fence_with_fn,
+claude-sonnet-5-5,modadd,full,1,end_turn,True,0.5044247508049011,False,,True,0.5044247508049011,False,,fence_with_fn,
+claude-sonnet-5-5,modadd,partial,1,end_turn,True,1.0,True,,True,1.0,True,,fence_with_fn,
+claude-sonnet-5-5,modadd,none,1,end_turn,True,1.0,True,,True,1.0,True,,fence_with_fn,
+claude-sonnet-5-5,modmul,full,1,end_turn,True,1.0,True,,True,1.0,True,,fence_with_fn,
+claude-sonnet-5-5,modmul,partial,1,end_turn,False,0.0,False,name_error,True,1.0,True,,fence_with_fn,
+claude-sonnet-5-5,modmul,none,1,end_turn,False,0.0,False,name_error,True,1.0,True,,fence_with_fn,
+claude-sonnet-5-5,parity,full,1,end_turn,True,1.0,True,,True,1.0,True,,fence_with_fn,
+claude-sonnet-5-5,parity,partial,1,end_turn,True,1.0,True,,True,1.0,True,,fence_with_fn,
+claude-sonnet-5-5,parity,none,1,end_turn,True,1.0,True,,True,1.0,True,,fence_with_fn,
+claude-sonnet-5-5,modadd,full,2,end_turn,True,1.0,True,,True,1.0,True,,fence_with_fn,
+claude-sonnet-5-5,modadd,partial,2,end_turn,True,1.0,True,,True,1.0,True,,fence_with_fn,
+claude-sonnet-5-5,modadd,none,2,end_turn,True,0.5044247508049011,False,,True,0.5044247508049011,False,,fence_with_fn,
+claude-sonnet-5-5,modmul,full,2,max_tokens,False,0.0,False,runtime,False,0.0,False,truncated,raw,[truncated] no build_weights definition in reply
+claude-sonnet-5-5,modmul,partial,2,end_turn,False,0.0,False,name_error,True,1.0,True,,fence_with_fn,
+claude-sonnet-5-5,modmul,none,2,end_turn,False,0.0,False,name_error,True,1.0,True,,fence_with_fn,
+claude-sonnet-5-5,parity,full,2,end_turn,True,1.0,True,,True,1.0,True,,fence_with_fn,
+claude-sonnet-5-5,parity,partial,2,end_turn,True,1.0,True,,True,1.0,True,,fence_with_fn,
+claude-sonnet-5-5,parity,none,2,end_turn,True,1.0,True,,True,1.0,True,,fence_with_fn,
+claude-sonnet-5-5,modadd,full,3,end_turn,True,1.0,True,,True,1.0,True,,fence_with_fn,
+claude-sonnet-5-5,modadd,partial,3,end_turn,True,1.0,True,,True,1.0,True,,fence_with_fn,
+claude-sonnet-5-5,modadd,none,3,end_turn,True,1.0,True,,True,1.0,True,,fence_with_fn,
+claude-sonnet-5-5,modmul,full,3,end_turn,True,1.0,True,,True,1.0,True,,fence_with_fn,
+claude-sonnet-5-5,modmul,partial,3,end_turn,False,0.0,False,name_error,True,1.0,True,,fence_with_fn,
+claude-sonnet-5-5,modmul,none,3,max_tokens,False,0.0,False,fence_syntax,False,0.0,False,truncated,fence_with_fn,"[syntax] SyntaxError: '(' was never closed (<generated>, line 18)"
+claude-sonnet-5-5,parity,full,3,end_turn,True,1.0,True,,True,1.0,True,,fence_with_fn,
+claude-sonnet-5-5,parity,partial,3,end_turn,True,1.0,True,,True,1.0,True,,fence_with_fn,
+claude-sonnet-5-5,parity,none,3,end_turn,True,1.0,True,,True,1.0,True,,fence_with_fn,
+claude-sonnet-5-5,modadd,full,4,end_turn,True,1.0,True,,True,1.0,True,,fence_with_fn,
+claude-sonnet-5-5,modadd,partial,4,end_turn,True,1.0,True,,True,1.0,True,,fence_with_fn,
+claude-sonnet-5-5,modadd,none,4,end_turn,True,0.5044247508049011,False,,True,0.5044247508049011,False,,fence_with_fn,
+claude-sonnet-5-5,modmul,full,4,end_turn,True,0.9955357313156128,True,,True,0.9955357313156128,True,,fence_with_fn,
+claude-sonnet-5-5,modmul,partial,4,end_turn,False,0.0,False,name_error,True,1.0,True,,fence_with_fn,
+claude-sonnet-5-5,modmul,none,4,end_turn,False,0.0,False,name_error,True,0.008928571827709675,False,,fence_with_fn,
+claude-sonnet-5-5,parity,full,4,end_turn,True,1.0,True,,True,1.0,True,,fence_with_fn,
+claude-sonnet-5-5,parity,partial,4,end_turn,True,1.0,True,,True,1.0,True,,fence_with_fn,
+claude-sonnet-5-5,parity,none,4,end_turn,True,1.0,True,,True,1.0,True,,fence_with_fn,
+claude-sonnet-5-5,modadd,full,5,end_turn,True,0.5044247508049011,False,,True,0.5044247508049011,False,,fence_with_fn,
+claude-sonnet-5-5,modadd,partial,5,end_turn,True,1.0,True,,True,1.0,True,,fence_with_fn,
+claude-sonnet-5-5,modadd,none,5,end_turn,True,1.0,True,,True,1.0,True,,fence_with_fn,
+claude-sonnet-5-5,modmul,full,5,end_turn,True,1.0,True,,True,1.0,True,,fence_with_fn,
+claude-sonnet-5-5,modmul,partial,5,end_turn,False,0.0,False,name_error,True,0.5089285969734192,False,,fence_with_fn,
+claude-sonnet-5-5,modmul,none,5,end_turn,False,0.0,False,name_error,True,1.0,True,,fence_with_fn,
+claude-sonnet-5-5,parity,full,5,end_turn,True,1.0,True,,True,1.0,True,,fence_with_fn,
+claude-sonnet-5-5,parity,partial,5,end_turn,True,1.0,True,,True,1.0,True,,fence_with_fn,
+claude-sonnet-5-5,parity,none,5,end_turn,True,1.0,True,,True,1.0,True,,fence_with_fn,
+claude-sonnet-5-5,modadd,full,6,end_turn,True,1.0,True,,True,1.0,True,,fence_with_fn,
+claude-sonnet-5-5,modadd,partial,6,end_turn,True,1.0,True,,True,1.0,True,,fence_with_fn,
+claude-sonnet-5-5,modadd,none,6,end_turn,True,1.0,True,,True,1.0,True,,fence_with_fn,
+claude-sonnet-5-5,modmul,full,6,end_turn,True,1.0,True,,True,1.0,True,,fence_with_fn,
+claude-sonnet-5-5,modmul,partial,6,max_tokens,False,0.0,False,name_error,True,1.0,True,,fence_with_fn,
+claude-sonnet-5-5,modmul,none,6,end_turn,False,0.0,False,name_error,True,1.0,True,,fence_with_fn,
+claude-sonnet-5-5,parity,full,6,end_turn,True,1.0,True,,True,1.0,True,,fence_with_fn,
+claude-sonnet-5-5,parity,partial,6,end_turn,True,1.0,True,,True,1.0,True,,fence_with_fn,
+claude-sonnet-5-5,parity,none,6,end_turn,True,1.0,True,,True,1.0,True,,fence_with_fn,
+claude-sonnet-5-5,modadd,full,7,end_turn,True,1.0,True,,True,1.0,True,,fence_with_fn,
+claude-sonnet-5-5,modadd,partial,7,end_turn,True,1.0,True,,True,1.0,True,,fence_with_fn,
+claude-sonnet-5-5,modadd,none,7,end_turn,True,1.0,True,,True,1.0,True,,fence_with_fn,
+claude-sonnet-5-5,modmul,full,7,end_turn,True,1.0,True,,True,1.0,True,,fence_with_fn,
+claude-sonnet-5-5,modmul,partial,7,end_turn,False,0.0,False,name_error,True,1.0,True,,fence_with_fn,
+claude-sonnet-5-5,modmul,none,7,end_turn,True,1.0,True,,True,1.0,True,,fence_with_fn,
+claude-sonnet-5-5,parity,full,7,end_turn,True,1.0,True,,True,1.0,True,,fence_with_fn,
+claude-sonnet-5-5,parity,partial,7,end_turn,True,1.0,True,,True,1.0,True,,fence_with_fn,
+claude-sonnet-5-5,parity,none,7,end_turn,True,1.0,True,,True,1.0,True,,fence_with_fn,
+claude-sonnet-5-5,modadd,full,8,end_turn,False,0.0,False,runtime,True,1.0,True,,fence_with_fn,
+claude-sonnet-5-5,modadd,partial,8,end_turn,True,1.0,True,,True,1.0,True,,fence_with_fn,
+claude-sonnet-5-5,modadd,none,8,end_turn,True,0.9646017551422119,False,,True,0.9646017551422119,False,,fence_with_fn,
+claude-sonnet-5-5,modmul,full,8,end_turn,True,1.0,True,,True,1.0,True,,fence_with_fn,
+claude-sonnet-5-5,modmul,partial,8,max_tokens,False,0.0,False,fence_syntax,False,0.0,False,truncated,fence_with_fn,"[syntax] SyntaxError: invalid syntax (<generated>, line 27)"
+claude-sonnet-5-5,modmul,none,8,end_turn,False,0.0,False,name_error,True,1.0,True,,fence_with_fn,
+claude-sonnet-5-5,parity,full,8,end_turn,True,1.0,True,,True,1.0,True,,fence_with_fn,
+claude-sonnet-5-5,parity,partial,8,end_turn,True,1.0,True,,True,1.0,True,,fence_with_fn,
+claude-sonnet-5-5,parity,none,8,end_turn,True,1.0,True,,True,1.0,True,,fence_with_fn,
+claude-sonnet-5-5,modadd,full,9,end_turn,True,1.0,True,,True,1.0,True,,fence_with_fn,
+claude-sonnet-5-5,modadd,partial,9,end_turn,True,1.0,True,,True,1.0,True,,fence_with_fn,
+claude-sonnet-5-5,modadd,none,9,end_turn,True,1.0,True,,True,1.0,True,,fence_with_fn,
+claude-sonnet-5-5,modmul,full,9,end_turn,True,1.0,True,,True,1.0,True,,fence_with_fn,
+claude-sonnet-5-5,modmul,partial,9,end_turn,False,0.0,False,name_error,True,1.0,True,,fence_with_fn,
+claude-sonnet-5-5,modmul,none,9,end_turn,False,0.0,False,name_error,True,1.0,True,,fence_with_fn,
+claude-sonnet-5-5,parity,full,9,end_turn,True,1.0,True,,True,1.0,True,,fence_with_fn,
+claude-sonnet-5-5,parity,partial,9,end_turn,True,1.0,True,,True,1.0,True,,fence_with_fn,
+claude-sonnet-5-5,parity,none,9,end_turn,True,1.0,True,,True,1.0,True,,fence_with_fn,
+claude-sonnet-5-5,cifar,full,0,end_turn,False,0.0,False,syntax,True,0.11,,,fence_with_fn,
+claude-sonnet-5-5,cifar,full,1,max_tokens,False,0.0,False,fence_syntax,False,0.0,,truncated,fence_with_fn,"[syntax] SyntaxError: '(' was never closed (<generated>, line 76)"
+claude-sonnet-5-5,cifar,full,2,max_tokens,False,0.0,False,fence_syntax,False,0.0,,truncated,fence_with_fn,"[syntax] SyntaxError: invalid syntax (<generated>, line 100)"
+qwen2.5-coder-14b,modadd,full,0,,True,0.008849557489156723,False,,True,0.008849557489156723,False,,fence_with_fn,
+qwen2.5-coder-14b,modadd,partial,0,,False,0.0,False,syntax,False,0.0,False,syntax,fence_with_fn,"[syntax] SyntaxError: did you forget parentheses around the comprehension target? (<generated>, line 13)"
+qwen2.5-coder-14b,modadd,none,0,,True,0.008849557489156723,False,,True,0.008849557489156723,False,,fence_with_fn,
+qwen2.5-coder-14b,modmul,full,0,,False,0.0,False,runtime,False,0.0,False,runtime,fence_with_fn,"[runtime] generated code failed: Traceback (most recent call last):
+  File ""<TMPDIR>/runner.py"", line 59, in <module>
+  File ""<generated>"", line 28, in "
+qwen2.5-coder-14b,modmul,partial,0,,True,0.008928571827709675,False,,True,0.008928571827709675,False,,fence_with_fn,
+qwen2.5-coder-14b,modmul,none,0,,True,0.009646045975387096,False,,True,0.009646045975387096,False,,fence_with_fn,
+qwen2.5-coder-14b,parity,full,0,,True,0.5,False,,True,0.5,False,,fence_with_fn,
+qwen2.5-coder-14b,parity,partial,0,,False,0.0,False,runtime,False,0.0,False,runtime,fence_with_fn,"[runtime] generated code failed: Traceback (most recent call last):
+  File ""<TMPDIR>/runner.py"", line 59, in <module>
+  File ""<generated>"", line 12, in "
+qwen2.5-coder-14b,parity,none,0,,True,0.5,False,,True,0.5,False,,fence_with_fn,
+qwen2.5-coder-14b,modadd,full,1,,True,0.008144725114107132,False,,True,0.008144725114107132,False,,fence_with_fn,
+qwen2.5-coder-14b,modadd,partial,1,,True,0.008849557489156723,False,,True,0.008849557489156723,False,,fence_with_fn,
+qwen2.5-coder-14b,modadd,none,1,,False,0.0,False,shape,False,0.0,False,shape,fence_with_fn,"[shape] generated code failed: Traceback (most recent call last):
+  File ""<TMPDIR>/runner.py"", line 54, in <module>
+  File ""<generated>"", line 29, in <m"
+qwen2.5-coder-14b,modmul,full,1,,False,0.0,False,runtime,False,0.0,False,runtime,fence_with_fn,"[runtime] generated code failed: Traceback (most recent call last):
+  File ""<TMPDIR>/runner.py"", line 59, in <module>
+  File ""<generated>"", line 27, in "
+qwen2.5-coder-14b,modmul,partial,1,,True,0.009167729876935482,False,,True,0.009167729876935482,False,,fence_with_fn,
+qwen2.5-coder-14b,modmul,none,1,,True,0.009167729876935482,False,,True,0.008769132196903229,False,,fence_with_fn,
+qwen2.5-coder-14b,parity,full,1,,True,0.5,False,,True,0.5,False,,fence_with_fn,
+qwen2.5-coder-14b,parity,partial,1,,True,0.5,False,,True,0.5,False,,fence_with_fn,
+qwen2.5-coder-14b,parity,none,1,,True,0.5,False,,True,0.5,False,,fence_with_fn,
+qwen2.5-coder-14b,modadd,full,2,,False,0.0,False,runtime,False,0.0,False,runtime,fence_with_fn,"[runtime] generated code failed: Traceback (most recent call last):
+  File ""<TMPDIR>/runner.py"", line 59, in <module>
+  File ""<generated>"", line 15, in "
+qwen2.5-coder-14b,modadd,partial,2,,True,0.016602709889411926,False,,True,0.016602709889411926,False,,fence_with_fn,
+qwen2.5-coder-14b,modadd,none,2,,True,0.00313258683308959,False,,True,0.00313258683308959,False,,fence_with_fn,
+qwen2.5-coder-14b,modmul,full,2,,True,0.008928571827709675,False,,True,0.008928571827709675,False,,fence_with_fn,
+qwen2.5-coder-14b,modmul,partial,2,,True,0.0,False,,True,0.0,False,,fence_with_fn,
+qwen2.5-coder-14b,modmul,none,2,,True,0.008928571827709675,False,,True,0.008928571827709675,False,,fence_with_fn,
+qwen2.5-coder-14b,parity,full,2,,True,0.5,False,,True,0.5,False,,fence_with_fn,
+qwen2.5-coder-14b,parity,partial,2,,False,0.0,False,runtime,False,0.0,False,runtime,fence_with_fn,"[runtime] generated code failed: Traceback (most recent call last):
+  File ""<TMPDIR>/runner.py"", line 59, in <module>
+  File ""<generated>"", line 26, in "
+qwen2.5-coder-14b,parity,none,2,,False,0.0,False,name_error,True,0.5,False,,fence_with_fn,
+qwen2.5-coder-14b,cifar,full,0,,False,0.0,False,runtime,False,0.0,,runtime,fence_with_fn,"[runtime] generated code failed: Traceback (most recent call last):
+  File ""<TMPDIR>/runner.py"", line 59, in <module>
+  File ""<generated>"", line 34, in "
+qwen2.5-coder-14b,cifar,full,1,,False,0.0,False,fence_syntax,False,0.0,,truncated,fence_with_fn,"[syntax] SyntaxError: '[' was never closed (<generated>, line 110)"
+qwen2.5-coder-14b,cifar,full,2,,True,0.0996,False,,True,0.114,,,fence_with_fn,
+llama-3.1-8b,modadd,full,0,,True,0.011120682582259178,False,,True,0.011120682582259178,False,,fence_with_fn,
+llama-3.1-8b,modadd,partial,0,,False,0.0,False,disallowed_token,True,0.008849557489156723,False,,fence_with_fn,
+llama-3.1-8b,modadd,none,0,,True,0.008849557489156723,False,,True,0.008849557489156723,False,,fence_with_fn,
+llama-3.1-8b,modmul,full,0,,False,0.0,False,disallowed_token,False,0.0,False,runtime,fence_with_fn,"[runtime] generated code failed: Traceback (most recent call last):
+  File ""<TMPDIR>/runner.py"", line 59, in <module>
+  File ""<generated>"", line 30, in "
+llama-3.1-8b,modmul,partial,0,,False,0.0,False,disallowed_token,False,0.0,False,runtime,fence_with_fn,"[runtime] generated code failed: Traceback (most recent call last):
+  File ""<TMPDIR>/runner.py"", line 59, in <module>
+  File ""<generated>"", line 13, in "
+llama-3.1-8b,modmul,none,0,,True,0.0,False,,True,0.0,False,,fence_with_fn,
+llama-3.1-8b,parity,full,0,,False,0.0,False,name_error,False,0.0,False,name_error,fence_with_fn,"[name_error] generated code failed: Traceback (most recent call last):
+  File ""<TMPDIR>/runner.py"", line 54, in <module>
+  File ""<generated>"", line 29, "
+llama-3.1-8b,parity,partial,0,,False,0.0,False,name_error,False,0.0,False,name_error,fence_with_fn,"[name_error] generated code failed: Traceback (most recent call last):
+  File ""<TMPDIR>/runner.py"", line 59, in <module>
+  File ""<generated>"", line 13, "
+llama-3.1-8b,parity,none,0,,False,0.0,False,runtime,False,0.0,False,shape,fence_with_fn,"[shape] W2 shape (2, 16) != (2, 64)"
+llama-3.1-8b,modadd,full,1,,False,0.0,False,disallowed_token,False,0.0,False,runtime,fence_with_fn,"[runtime] generated code failed: Traceback (most recent call last):
+  File ""<TMPDIR>/runner.py"", line 59, in <module>
+  File ""<generated>"", line 28, in "
+llama-3.1-8b,modadd,partial,1,,True,0.008849557489156723,False,,True,0.008849557489156723,False,,fence_with_fn,
+llama-3.1-8b,modadd,none,1,,False,0.0,False,runtime,False,0.0,False,nonfinite,fence_with_fn,[nonfinite] W2 has non-finite values
+llama-3.1-8b,modmul,full,1,,False,0.0,False,runtime,False,0.0,False,runtime,fence_with_fn,"[runtime] generated code failed: Traceback (most recent call last):
+  File ""<TMPDIR>/runner.py"", line 59, in <module>
+  File ""<generated>"", line 20, in "
+llama-3.1-8b,modmul,partial,1,,False,0.0,False,disallowed_token,False,0.0,False,runtime,fence_with_fn,"[runtime] generated code failed: Traceback (most recent call last):
+  File ""<TMPDIR>/runner.py"", line 59, in <module>
+  File ""<generated>"", line 19, in "
+llama-3.1-8b,modmul,none,1,,True,0.005181760061532259,False,,True,0.005181760061532259,False,,fence_with_fn,
+llama-3.1-8b,parity,full,1,,False,0.0,False,shape,False,0.0,False,shape,fence_with_fn,"[shape] W2 shape (1, 68) != (2, 64)"
+llama-3.1-8b,parity,partial,1,,False,0.0,False,name_error,False,0.0,False,name_error,fence_with_fn,"[name_error] generated code failed: Traceback (most recent call last):
+  File ""<TMPDIR>/runner.py"", line 59, in <module>
+  File ""<generated>"", line 16, "
+llama-3.1-8b,parity,none,1,,True,0.5,False,,True,0.5,False,,fence_with_fn,
+llama-3.1-8b,modadd,full,2,,True,0.008849557489156723,False,,True,0.008849557489156723,False,,fence_with_fn,
+llama-3.1-8b,modadd,partial,2,,True,0.008849557489156723,False,,True,0.008849557489156723,False,,fence_with_fn,
+llama-3.1-8b,modadd,none,2,,False,0.0,False,shape,False,0.0,False,shape,fence_with_fn,"[shape] generated code failed: Traceback (most recent call last):
+  File ""<TMPDIR>/runner.py"", line 59, in <module>
+  File ""<generated>"", line 20, in bu"
+llama-3.1-8b,modmul,full,2,,False,0.0,False,disallowed_token,True,0.0,False,,fence_with_fn,
+llama-3.1-8b,modmul,partial,2,,False,0.0,False,runtime,False,0.0,False,runtime,fence_with_fn,"[runtime] generated code failed: Traceback (most recent call last):
+  File ""<TMPDIR>/runner.py"", line 59, in <module>
+  File ""<generated>"", line 33, in "
+llama-3.1-8b,modmul,none,2,,False,0.0,False,runtime,False,0.0,False,runtime,fence_with_fn,"[runtime] generated code failed: Traceback (most recent call last):
+  File ""<TMPDIR>/runner.py"", line 59, in <module>
+  File ""<generated>"", line 30, in "
+llama-3.1-8b,parity,full,2,,False,0.0,False,shape,False,0.0,False,shape,fence_with_fn,"[shape] generated code failed: Traceback (most recent call last):
+  File ""<TMPDIR>/runner.py"", line 59, in <module>
+  File ""<generated>"", line 35, in bu"
+llama-3.1-8b,parity,partial,2,,False,0.0,False,name_error,False,0.0,False,shape,fence_with_fn,"[shape] W2 shape (1, 2) != (2, 64)"
+llama-3.1-8b,parity,none,2,,False,0.0,False,shape,False,0.0,False,shape,fence_with_fn,"[shape] W2 shape (2, 6) != (2, 64)"
+llama-3.1-8b,cifar,full,0,,True,0.1,False,,True,0.1,,,fence_with_fn,
+llama-3.1-8b,cifar,full,1,,False,0.0,False,shape,False,0.0,,shape,fence_with_fn,"[shape] conv1.weight shape (12, 5, 5) != (32, 3, 5, 5)"
+llama-3.1-8b,cifar,full,2,,True,0.1211,False,,True,0.1,,,fence_with_fn,

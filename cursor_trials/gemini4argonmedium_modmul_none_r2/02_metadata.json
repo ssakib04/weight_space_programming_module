@@ -1,0 +1,17 @@
+{
+  "channel": "cursor_chat",
+  "model_label_reported": "Gemini 4 Argon Medium",
+  "mode_r0_ask_confirmed_t82": true,
+  "mode_fresh_chats_newly_confirmed": false,
+  "mode_note": "Ask confirmed only for r0 (t82); this rep is batch-supplied, fresh-chat Ask not newly confirmed",
+  "date_asia_dhaka_approx": "2026-11-07T00:16+06:00",
+  "task": "modmul",
+  "prompt_level": "none",
+  "rep": 2,
+  "user_visible_trial_index": 3,
+  "batch_source": "t89u",
+  "raw_sha256": "855810333084f71b85addd9bb945816e7569842b4596655caba1abe14594cf13",
+  "hardcodes_g3": true,
+  "prompt_file_assumed": "START_HERE_modmul_none.txt",
+  "exact_paste_confirmed": false
+}

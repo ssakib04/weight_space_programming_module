@@ -1,0 +1,14 @@
+{
+  "model": "mistralai/Mistral-Small-24B-Instruct-2501",
+  "revision": "9527884be6e5616bdd54de542f9ae13384489724",
+  "time_start": "2026-11-06T12:31:01.735860+06:00",
+  "tmp_free_gib": 939.013484954834,
+  "load_generate_ok": true,
+  "short_reply": "PREFLIGHT_OK",
+  "in_tok": 185,
+  "out_tok": 5,
+  "footprint_bytes": 13800089856,
+  "device_map_n": 44,
+  "time_end": "2026-11-06T12:38:03.952862+06:00",
+  "hf_home": "/tmp/wsp_hf_cache_shared"
+}

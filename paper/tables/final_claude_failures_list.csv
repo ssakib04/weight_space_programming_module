@@ -1,0 +1,14 @@
+task,prompt,rep,source,stop_reason,v2_outcome,acc,outcome
+modadd,partial,0,"v2 reply replayed through v3 harness (offline, $0)",end_turn,fail (wrong weights),0.2504503130912781,wrong_weights
+modmul,full,0,"v2 reply replayed through v3 harness (offline, $0)",max_tokens,fail (runtime),0.0,truncated
+modadd,full,1,"v2 reply replayed through v3 harness (offline, $0)",end_turn,fail (wrong weights),0.5044247508049011,wrong_weights
+modadd,none,2,"v2 reply replayed through v3 harness (offline, $0)",end_turn,fail (wrong weights),0.5044247508049011,wrong_weights
+modmul,full,2,"v2 reply replayed through v3 harness (offline, $0)",max_tokens,fail (runtime),0.0,truncated
+modmul,none,3,"v2 reply replayed through v3 harness (offline, $0)",max_tokens,fail (fence_syntax),0.0,truncated
+modadd,none,4,"v2 reply replayed through v3 harness (offline, $0)",end_turn,fail (wrong weights),0.5044247508049011,wrong_weights
+modmul,none,4,"v2 reply replayed through v3 harness (offline, $0)",end_turn,fail (name_error),0.008928571827709675,wrong_weights
+modadd,full,5,"v2 reply replayed through v3 harness (offline, $0)",end_turn,fail (wrong weights),0.5044247508049011,wrong_weights
+modmul,partial,5,"v2 reply replayed through v3 harness (offline, $0)",end_turn,fail (name_error),0.5089285969734192,wrong_weights
+modadd,none,8,"v2 reply replayed through v3 harness (offline, $0)",end_turn,fail (wrong weights),0.9646017551422119,wrong_weights
+modmul,partial,8,"v2 reply replayed through v3 harness (offline, $0)",max_tokens,fail (fence_syntax),0.0,truncated
+modmul,full,14,Run 2 fresh API call (B),end_turn,n/a (new in Run 2),0.008928571827709675,wrong_weights

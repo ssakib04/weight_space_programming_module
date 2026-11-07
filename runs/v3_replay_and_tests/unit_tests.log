@@ -1,0 +1,135 @@
+device cpu | torch 2.15.0+cpu | out /tmp/wsp_t_aqy_fhtj | QUICK True | MOCK False | RUN_CLAUDE False | DRY_RUN_CLAUDE True | budget $3.00
+modadd N = 12769 shapes {'W1': (256, 226), 'W2': (113, 256)}
+modmul N = 12544 shapes {'W1': (256, 226), 'W2': (113, 256)}
+parity N = 65536 shapes {'W1': (64, 16), 'b1': (64,), 'W2': (2, 64), 'b2': (2,)}
+permadd N = 12769 shapes {'W1': (256, 226), 'W2': (113, 256)}
+primitive root mod 113 = 3 | parity subset [2, 5, 10, 11, 12, 14]
+oracle modadd: acc 1.0000 | norm min margin 2.798 | prob margin 0.0074
+oracle modmul: acc 1.0000 | norm min margin 2.854 | prob margin 0.0075
+oracle parity: acc 1.0000 | norm min margin 1.414 | prob margin 0.7616
+oracle permadd: acc 1.0000 | norm min margin 2.798 | prob margin 0.0074
+cache dir /tmp/wsp_t_aqy_fhtj/cache | seeded from v2 log: 0 | entries: 0
+torchvision CIFAR-10 failed: RuntimeError('WSP_FAKE_CIFAR=1')
+CIFAR-10 unavailable -> synthetic stand-in (pipeline test only): RuntimeError('WSP_FAKE_CIFAR=1')
+CIFAR source: FAKE torch.Size([2000, 3, 32, 32])
+PASS fenced oracle with imports + prose -> success
+PASS unfenced oracle with prose before/after -> success  [unfenced None]
+PASS ```py fence -> success
+PASS bare ``` fence -> success
+PASS multiple fences (helper in another block) -> concatenated, success  [fences_concat None]
+PASS truncated reply (unclosed fence) -> error_kind truncated  [[syntax] SyntaxError: '(' was never closed (<generated>, line 5)]
+PASS complete code but stop_reason=max_tokens -> still evaluated, flagged
+PASS no code -> no_code  [[no_code] no build_weights definition in reply]
+PASS wrong shape -> shape  [[shape] W1 shape (3, 3) != (256, 226)]
+PASS NaN weights -> nonfinite
+PASS non-dict -> not_dict  [[not_dict] generated code failed: SANDBOX_NOT_DICT list
+]
+PASS wrong function name -> no_code/missing_fn  [no_code]
+PASS next/iter/zip/map/filter/sorted/... + itertools/functools imports + print -> success
+PASS infinite loop -> timeout  [timeout]
+PASS forbidden: import os -> blocked  [blocked: 'le>\n  File "<TMPDIR>/runner.py", line 17, in _safe_import\nImportError: import of \'os\' is blocked in the sandbox\n']
+PASS forbidden: import subprocess inside fn -> blocked  [blocked: 'le "<TMPDIR>/runner.py", line 17, in _safe_import\nImportError: import of \'subprocess\' is blocked in the sandbox\n']
+PASS forbidden: open() -> blocked  [blocked: 'in build_weights\n  File "<TMPDIR>/runner.py", line 30, in f\nPermissionError: sandbox: builtin open() is blocked\n']
+PASS forbidden: np.load file read -> blocked  [blocked: '\n  File "<TMPDIR>/runner.py", line 44, in _hook\nPermissionError: sandbox: file access blocked (\'/etc/hostname\')\n']
+PASS forbidden: np.save file write -> blocked  [blocked: '  File "<TMPDIR>/runner.py", line 44, in _hook\nPermissionError: sandbox: file access blocked (\'/tmp/pwned.npy\')\n']
+PASS forbidden: __import__('os') -> blocked  [blocked: 'hts\n  File "<TMPDIR>/runner.py", line 17, in _safe_import\nImportError: import of \'os\' is blocked in the sandbox\n']
+PASS forbidden: eval -> blocked  [blocked: 'in build_weights\n  File "<TMPDIR>/runner.py", line 30, in f\nPermissionError: sandbox: builtin eval() is blocked\n']
+PASS forbidden: subclass escape -> os.system -> blocked  [blocked: 'ld_weights\n  File "<TMPDIR>/runner.py", line 46, in _hook\nPermissionError: sandbox: blocked operation os.system\n']
+PASS forbidden: socket via numpy internals -> blocked  [blocked: '  File "<TMPDIR>/runner.py", line 17, in _safe_import\nImportError: import of \'socket\' is blocked in the sandbox\n']
+PASS forbidden: relative import -> blocked  [blocked: 'dule>\n  File "<TMPDIR>/runner.py", line 17, in _safe_import\nImportError: import of \'\' is blocked in the sandbox\n']
+PASS env secret not passed (smoke)
+PASS torch tensors returned -> converted
+PASS edit_weights receives inputs
+PASS oracle modmul via process_reply -> success
+PASS oracle parity via process_reply -> success
+PASS oracle permadd via process_reply -> success
+PASS raw margin
+PASS normalised margin = raw / logit std
+PASS prob margin
+PASS normalised margin is scale-invariant
+PASS Wilson 7/10 = (0.397, 0.892)  [0.3968,0.8922]
+PASS Wilson 10/10 upper=1, lower 0.722  [0.7225]
+PASS Wilson n=0 -> nan
+PASS t CI (n=3) = 4.303*1/sqrt3
+device cpu | torch 2.15.0+cpu | out /tmp/wsp_t__ufhamym | QUICK True | MOCK False | RUN_CLAUDE False | DRY_RUN_CLAUDE True | budget $3.00
+modadd N = 12769 shapes {'W1': (256, 226), 'W2': (113, 256)}
+modmul N = 12544 shapes {'W1': (256, 226), 'W2': (113, 256)}
+parity N = 65536 shapes {'W1': (64, 16), 'b1': (64,), 'W2': (2, 64), 'b2': (2,)}
+permadd N = 12769 shapes {'W1': (256, 226), 'W2': (113, 256)}
+primitive root mod 113 = 3 | parity subset [2, 5, 10, 11, 12, 14]
+oracle modadd: acc 1.0000 | norm min margin 2.798 | prob margin 0.0074
+oracle modmul: acc 1.0000 | norm min margin 2.854 | prob margin 0.0075
+oracle parity: acc 1.0000 | norm min margin 1.414 | prob margin 0.7616
+oracle permadd: acc 1.0000 | norm min margin 2.798 | prob margin 0.0074
+cache dir /tmp/wsp_t__ufhamym/cache | seeded from v2 log: 0 | entries: 0
+torchvision CIFAR-10 failed: RuntimeError('WSP_FAKE_CIFAR=1')
+CIFAR-10 unavailable -> synthetic stand-in (pipeline test only): RuntimeError('WSP_FAKE_CIFAR=1')
+CIFAR source: FAKE torch.Size([2000, 3, 32, 32])
+PASS DRY_RUN: zero API calls, client never constructed, rows flagged dry_run_mock
+PASS DRY_RUN: anthropic module never imported
+device cpu | torch 2.15.0+cpu | out /tmp/wsp_t_q38orvg3 | QUICK True | MOCK False | RUN_CLAUDE False | DRY_RUN_CLAUDE True | budget $3.00
+modadd N = 12769 shapes {'W1': (256, 226), 'W2': (113, 256)}
+modmul N = 12544 shapes {'W1': (256, 226), 'W2': (113, 256)}
+parity N = 65536 shapes {'W1': (64, 16), 'b1': (64,), 'W2': (2, 64), 'b2': (2,)}
+permadd N = 12769 shapes {'W1': (256, 226), 'W2': (113, 256)}
+primitive root mod 113 = 3 | parity subset [2, 5, 10, 11, 12, 14]
+oracle modadd: acc 1.0000 | norm min margin 2.798 | prob margin 0.0074
+oracle modmul: acc 1.0000 | norm min margin 2.854 | prob margin 0.0075
+oracle parity: acc 1.0000 | norm min margin 1.414 | prob margin 0.7616
+oracle permadd: acc 1.0000 | norm min margin 2.798 | prob margin 0.0074
+cache dir /tmp/wsp_t_q38orvg3/cache | seeded from v2 log: 0 | entries: 0
+torchvision CIFAR-10 failed: RuntimeError('WSP_FAKE_CIFAR=1')
+CIFAR-10 unavailable -> synthetic stand-in (pipeline test only): RuntimeError('WSP_FAKE_CIFAR=1')
+CIFAR source: FAKE torch.Size([2000, 3, 32, 32])
+PASS budget: calls stop before crossing section cap  [done=3 spent=$0.129 section B_algo cap: spent $0.129 + worst $0.061 > $0.15]
+PASS budget: spend recorded per section
+PASS temperature rejection -> one retry, then no temperature  [fake calls 4 for 3 replies]
+PASS cache: re-running the same (model,prompt,rep) makes ZERO API calls  [0 new calls]
+PASS cache: cached rows cost $0 and give same result
+PASS cache: truncated@6000 not reused for 12000
+device cpu | torch 2.15.0+cpu | out /tmp/wsp_t__yt5re0e | QUICK True | MOCK False | RUN_CLAUDE False | DRY_RUN_CLAUDE True | budget $3.00
+modadd N = 12769 shapes {'W1': (256, 226), 'W2': (113, 256)}
+modmul N = 12544 shapes {'W1': (256, 226), 'W2': (113, 256)}
+parity N = 65536 shapes {'W1': (64, 16), 'b1': (64,), 'W2': (2, 64), 'b2': (2,)}
+permadd N = 12769 shapes {'W1': (256, 226), 'W2': (113, 256)}
+primitive root mod 113 = 3 | parity subset [2, 5, 10, 11, 12, 14]
+oracle modadd: acc 1.0000 | norm min margin 2.798 | prob margin 0.0074
+oracle modmul: acc 1.0000 | norm min margin 2.854 | prob margin 0.0075
+oracle parity: acc 1.0000 | norm min margin 1.414 | prob margin 0.7616
+oracle permadd: acc 1.0000 | norm min margin 2.798 | prob margin 0.0074
+cache dir /tmp/wsp_t__yt5re0e/cache | seeded from v2 log: 0 | entries: 0
+torchvision CIFAR-10 failed: RuntimeError('WSP_FAKE_CIFAR=1')
+CIFAR-10 unavailable -> synthetic stand-in (pipeline test only): RuntimeError('WSP_FAKE_CIFAR=1')
+CIFAR source: FAKE torch.Size([2000, 3, 32, 32])
+PASS total cap stops (worst-case pre-check)  [calls=0]
+PASS v3 prompts byte-identical to v2 prompts (cache validity)  [93/93]
+device cpu | torch 2.15.0+cpu | out /tmp/wsp_t_q21szg2t | QUICK True | MOCK False | RUN_CLAUDE False | DRY_RUN_CLAUDE True | budget $3.00
+modadd N = 12769 shapes {'W1': (256, 226), 'W2': (113, 256)}
+modmul N = 12544 shapes {'W1': (256, 226), 'W2': (113, 256)}
+parity N = 65536 shapes {'W1': (64, 16), 'b1': (64,), 'W2': (2, 64), 'b2': (2,)}
+permadd N = 12769 shapes {'W1': (256, 226), 'W2': (113, 256)}
+primitive root mod 113 = 3 | parity subset [2, 5, 10, 11, 12, 14]
+oracle modadd: acc 1.0000 | norm min margin 2.798 | prob margin 0.0074
+oracle modmul: acc 1.0000 | norm min margin 2.854 | prob margin 0.0075
+oracle parity: acc 1.0000 | norm min margin 1.414 | prob margin 0.7616
+oracle permadd: acc 1.0000 | norm min margin 2.798 | prob margin 0.0074
+cache dir /tmp/wsp_t_q21szg2t/cache | seeded from v2 log: 0 | entries: 0
+torchvision CIFAR-10 failed: RuntimeError('WSP_FAKE_CIFAR=1')
+CIFAR-10 unavailable -> synthetic stand-in (pipeline test only): RuntimeError('WSP_FAKE_CIFAR=1')
+CIFAR source: FAKE torch.Size([2000, 3, 32, 32])
+PASS v2-seeded cache: replaying 30 v2 modmul cases makes 0 API calls  [seeded=93]
+PASS v2-seeded cache result = offline replay (24/30 modmul success)  [24]
+                       n  cached  worst_usd
+task   prompt section                      
+cifar  full   B_cifar  2       1   0.121087
+modmul full   B_algo   4       2   0.121781
+PRE-RUN ESTIMATE: worst-case total $0.24 | caps: total $3.00, sections {'B_algo': 2.0, 'B_cifar': 0.8, 'C': 0.3} | DRY_RUN_CLAUDE=False RUN_CLAUDE=False
+PASS plan: cached reps cost $0, fresh reps priced; truncated v2 CIFAR r0?   [     task prompt  rep  cached  section  worst_usd
+0  modmul   full    0    True   B_algo   0.000000
+1  modmul   full    1    True   B_algo   0.000000
+2  modmul   full   10   False   B_algo   0.060891
+3  modmul   full   11   False   B_algo   0.060891
+4   cifar   full    0    True  B_cifar   0.000000
+5   cifar   full   10   False  B_cifar   0.121087]
+
+SUMMARY: 51 passed, 0 failed

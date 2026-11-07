@@ -1,0 +1,7 @@
+{"time_dhaka": "2026-11-06T12:31:01.263396+06:00", "event": "PREFLIGHT_MODEL_OK", "model": "microsoft/phi-4", "load_generate_ok": true}
+{"time_dhaka": "2026-11-06T12:38:03.952909+06:00", "event": "PREFLIGHT_MODEL_OK", "model": "mistralai/Mistral-Small-24B-Instruct-2501", "load_generate_ok": true}
+{"time_dhaka": "2026-11-06T12:38:04.514355+06:00", "event": "DISK_PREFLIGHT", "model": "microsoft/phi-4", "tmp_free_gib": 895.0890655517578, "required_gib": 35, "hf_home": "/tmp/wsp_hf_cache_shared"}
+{"time_dhaka": "2026-11-06T12:39:41.044181+06:00", "event": "MODEL_READY", "model": "microsoft/phi-4", "revision": "2db69c1c3e91a05d2c64a3185acfbaf36f744e25", "footprint_bytes": 8871782656}
+{"time_dhaka": "2026-11-06T12:47:55.527507+06:00", "event": "DISK_PREFLIGHT", "model": "mistralai/Mistral-Small-24B-Instruct-2501", "tmp_free_gib": 895.0870056152344, "required_gib": 54, "hf_home": "/tmp/wsp_hf_cache_shared"}
+{"time_dhaka": "2026-11-06T12:50:49.074148+06:00", "event": "MODEL_READY", "model": "mistralai/Mistral-Small-24B-Instruct-2501", "revision": "9527884be6e5616bdd54de542f9ae13384489724", "footprint_bytes": 13800089856}
+{"time_dhaka": "2026-11-06T12:58:07.821214+06:00", "event": "PILOT_COMPLETE", "n_B": 12, "tmp_free_gib": 895.0855903625488, "working_out": "/kaggle/working/local_strong_pilot_v2_gated"}

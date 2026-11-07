@@ -1,0 +1,51 @@
+cat > /tmp/t.py <<'EOF'
+import numpy as np, math
+def build_weights():
+    p = 113
+    n = p - 1
+    g = None
+    for cand in range(2, p):
+        x, seen = 1, set()
+        for _ in range(n):
+            x = x * cand % p
+            seen.add(x)
+        if len(seen) == n:
+            g = cand
+            break
+    lg = np.zeros(p)
+    pw = np.zeros(p)
+    x = 1
+    for e in range(n):
+        lg[x] = e
+        pw[e] = x
+        x = x * g % p
+    W1 = np.zeros((256, 2 * p))
+    W2 = np.zeros((p, 256))
+    ia = np.arange(1, p)
+    ang_in = lg[ia]
+    cs_l = np.arange(n)
+    cvals = pw[:n].astype(int)  # c value for each log l
+    neuron = 0
+    for k in range(1, 33):
+        w = 2 * math.pi * k / n
+        ci, si = np.cos(w * ang_in), np.sin(w * ang_in)
+        cl, sl = np.cos(w * cs_l), np.sin(w * cs_l)
+        prods = [(ci, ci, cl, 1.0), (si, si, cl, -1.0), (si, ci, sl, 1.0), (ci, si, sl, 1.0)]
+        for u, v, coef, s in prods:
+            for sg in (1.0, -1.0):
+                W1[neuron, ia] = u
+                W1[neuron, p + ia] = sg * v
+                W2[cvals, neuron] = sg * s * coef
+                neuron += 1
+    return {"W1": W1, "W2": W2}
+W=build_weights()
+W1,W2=W["W1"],W["W2"]
+bad=0
+for a in range(1,113):
+    for b in range(1,113):
+        x=np.zeros(226);x[a]=1;x[113+b]=1
+        l=W2@((W1@x)**2)
+        if np.argmax(l)!=a*b%113: bad+=1
+print(bad, W1.shape, W2.shape)
+EOF
+python3 /tmp/t.py

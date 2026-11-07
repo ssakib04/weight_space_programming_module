@@ -1,0 +1,159 @@
+{
+  "trial_id": "gpt56solmedium_modmul_none_r0",
+  "model_label_reported": "GPT-5.6 Sol Medium",
+  "mode_confirmed": false,
+  "domain": {
+    "p": 113,
+    "n_pairs": 12544,
+    "zero_excluded": true,
+    "shapes_required": {
+      "W1": [
+        256,
+        226
+      ],
+      "W2": [
+        113,
+        256
+      ]
+    },
+    "success_threshold": 0.99
+  },
+  "as_is_contract_outcome": {
+    "ok": true,
+    "success": true,
+    "all_acc": 1.0,
+    "error": null,
+    "error_kind": null,
+    "eval_wall_s": 0.22661843500100076,
+    "harness_torch_exact": {
+      "correct": 12544,
+      "total": 12544,
+      "wrong": 0,
+      "param_dtype": "torch.float32"
+    },
+    "harness_margins": {
+      "mean_margin_raw": 0.001573155444039374,
+      "min_margin_raw": 0.0015728473663330078,
+      "mean_margin_norm": 0.0021499738733564873,
+      "min_margin_norm": 0.002149552549061665,
+      "mean_prob_margin": 3.010481231775533e-05,
+      "min_prob_margin": 3.0098918598998187e-05
+    }
+  },
+  "float64_numpy_eval": {
+    "dtype": "<class 'numpy.float64'>",
+    "correct": 12544,
+    "total": 12544,
+    "wrong": 0,
+    "accuracy": 1.0,
+    "min_margin_raw": 0.0015731849821828403,
+    "mean_margin_raw": 0.00157318498218338,
+    "finite_logits": true
+  },
+  "float32_numpy_eval": {
+    "dtype": "<class 'numpy.float32'>",
+    "correct": 12544,
+    "total": 12544,
+    "wrong": 0,
+    "accuracy": 1.0,
+    "min_margin_raw": 0.0015728473663330078,
+    "mean_margin_raw": 0.0015731554012745619,
+    "finite_logits": true
+  },
+  "dtype_discrepancy": {
+    "acc_f64": 1.0,
+    "acc_f32": 1.0,
+    "acc_torch_harness": 1.0,
+    "min_margin_raw_f64": 0.0015731849821828403,
+    "min_margin_raw_f32": 0.0015728473663330078,
+    "same_accuracy_all": true
+  },
+  "capacity_usage_verified": {
+    "W1_nonzero_rows": "9",
+    "W1_nonzero_row_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "W2_nonzero_cols": "9",
+    "W2_nonzero_col_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "connected_units_W1row_and_W2col": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "n_connected": 9,
+    "allocated_hidden": 256,
+    "unit8_constant_path": {
+      "W1_row8_nnz": 113,
+      "W2_col8_nnz": 1,
+      "W2_col8_nonzero_rows": [
+        0
+      ]
+    },
+    "interpretation": "Code writes feature pairs into rows 0..7 and constant into row 8; readout uses cols 0..7 for c>=1 and col 8 for c=0. Measured nonzero rows/cols above. This is structural sparsity of the written matrix, not a runtime compute benchmark.",
+    "no_claim_improved_compute": true
+  },
+  "weight_stats": {
+    "W1": {
+      "shape": [
+        256,
+        226
+      ],
+      "dtype": "float64",
+      "finite": true,
+      "min": -1.0,
+      "max": 1.0,
+      "nnz": 1905,
+      "sha256": "94b565848d31659feafde9127600c3aceeaea143784c29040d886d5fe58c0a9d"
+    },
+    "W2": {
+      "shape": [
+        113,
+        256
+      ],
+      "dtype": "float64",
+      "finite": true,
+      "min": -2.0,
+      "max": 0.25,
+      "nnz": 893,
+      "sha256": "2833f38f4a1a50dcf94c88197ad01bfc8c594a70421c08e8b03b6178c4c9b056"
+    }
+  },
+  "margin_note": "Raw margins are in logit units of each network; normalized margins are within-network only and must not be used to rank models against each other.",
+  "extraction_policy": {
+    "policy_id": "cursor_uniform_v1",
+    "construction_primary_formatting_secondary": true,
+    "np_math_preprovided_by_contract": true,
+    "no_numerical_repair": true,
+    "no_silent_import_injection_on_as_is": true
+  },
+  "structure_after_eval": {
+    "generator_search_via_order_factors": true,
+    "fundamental_freq_trig_features_only": "k=1 style angles = 2*pi*dlog/order",
+    "eight_signed_pair_features_plus_constant": true,
+    "no_recall_vs_reasoning_claim": true
+  }
+}

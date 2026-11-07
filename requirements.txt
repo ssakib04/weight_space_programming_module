@@ -1,0 +1,5 @@
+# Offline verification (tested with Python 3.13.5)
+numpy>=2.0        # verified with 2.5.4
+pandas>=2.2       # verified with 3.0.6 and 3.1.1
+# Optional: rebuild figures
+matplotlib>=3.8   # verified with 3.11.2

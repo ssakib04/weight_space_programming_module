@@ -1,0 +1,226 @@
+{
+  "addendum_type": "author_attestation",
+  "recorded_at": "2026-11-07T13:20:00+06:00",
+  "timezone": "Asia/Dhaka",
+  "attested_by": "Kazi Sadman Sakib (study author)",
+  "statement": "All Cursor queries were run in Ask mode, with the frozen prompts pasted unchanged, with an empty workspace, and each query in a separate chat.",
+  "verbatim_author_message": "ask mode, unchanged prompts, the workspace was empty and each query were done in separate chats",
+  "scope": "all 30 Cursor trials listed below (3 model labels x {modmul,permadd} x 5, no-hint prompts)",
+  "verification_status": "author attestation given after collection; NOT independently verified from Cursor logs or provider records",
+  "model_labels_status": "user-reported Cursor model-picker labels; NOT provider-verified",
+  "historical_metadata_policy": "Contemporaneous per-trial metadata (e.g. mode_fresh_chats_newly_confirmed=false, exact_paste_confirmed=false) are intentionally left unchanged; they describe what was confirmed at collection time. This addendum supersedes them only for the derived manuscript description of session conditions.",
+  "primary_endpoint_unchanged": "27/30 construction success; sonnet55high_modmul_none_r0 counted after documented shell-wrapper extraction (no numerical repair).",
+  "trials": [
+    {
+      "trial_id": "sonnet55high_modmul_none_r0",
+      "model_label_reported": "Claude Sonnet 5.5 High",
+      "task": "modmul",
+      "rep": 0,
+      "success": true
+    },
+    {
+      "trial_id": "sonnet55high_modmul_none_r1",
+      "model_label_reported": "Claude Sonnet 5.5 High",
+      "task": "modmul",
+      "rep": 1,
+      "success": true
+    },
+    {
+      "trial_id": "sonnet55high_modmul_none_r2",
+      "model_label_reported": "Claude Sonnet 5.5 High",
+      "task": "modmul",
+      "rep": 2,
+      "success": true
+    },
+    {
+      "trial_id": "sonnet55high_modmul_none_r3",
+      "model_label_reported": "Claude Sonnet 5.5 High",
+      "task": "modmul",
+      "rep": 3,
+      "success": false
+    },
+    {
+      "trial_id": "sonnet55high_modmul_none_r4",
+      "model_label_reported": "Claude Sonnet 5.5 High",
+      "task": "modmul",
+      "rep": 4,
+      "success": true
+    },
+    {
+      "trial_id": "sonnet55high_permadd_none_r0",
+      "model_label_reported": "Claude Sonnet 5.5 High",
+      "task": "permadd",
+      "rep": 0,
+      "success": true
+    },
+    {
+      "trial_id": "sonnet55high_permadd_none_r1",
+      "model_label_reported": "Claude Sonnet 5.5 High",
+      "task": "permadd",
+      "rep": 1,
+      "success": true
+    },
+    {
+      "trial_id": "sonnet55high_permadd_none_r2",
+      "model_label_reported": "Claude Sonnet 5.5 High",
+      "task": "permadd",
+      "rep": 2,
+      "success": true
+    },
+    {
+      "trial_id": "sonnet55high_permadd_none_r3",
+      "model_label_reported": "Claude Sonnet 5.5 High",
+      "task": "permadd",
+      "rep": 3,
+      "success": true
+    },
+    {
+      "trial_id": "sonnet55high_permadd_none_r4",
+      "model_label_reported": "Claude Sonnet 5.5 High",
+      "task": "permadd",
+      "rep": 4,
+      "success": true
+    },
+    {
+      "trial_id": "gemini4argonmedium_modmul_none_r0",
+      "model_label_reported": "Gemini 4 Argon Medium",
+      "task": "modmul",
+      "rep": 0,
+      "success": true
+    },
+    {
+      "trial_id": "gemini4argonmedium_modmul_none_r1",
+      "model_label_reported": "Gemini 4 Argon Medium",
+      "task": "modmul",
+      "rep": 1,
+      "success": true
+    },
+    {
+      "trial_id": "gemini4argonmedium_modmul_none_r2",
+      "model_label_reported": "Gemini 4 Argon Medium",
+      "task": "modmul",
+      "rep": 2,
+      "success": false
+    },
+    {
+      "trial_id": "gemini4argonmedium_modmul_none_r3",
+      "model_label_reported": "Gemini 4 Argon Medium",
+      "task": "modmul",
+      "rep": 3,
+      "success": true
+    },
+    {
+      "trial_id": "gemini4argonmedium_modmul_none_r4",
+      "model_label_reported": "Gemini 4 Argon Medium",
+      "task": "modmul",
+      "rep": 4,
+      "success": false
+    },
+    {
+      "trial_id": "gemini4argonmedium_permadd_none_r0",
+      "model_label_reported": "Gemini 4 Argon Medium",
+      "task": "permadd",
+      "rep": 0,
+      "success": true
+    },
+    {
+      "trial_id": "gemini4argonmedium_permadd_none_r1",
+      "model_label_reported": "Gemini 4 Argon Medium",
+      "task": "permadd",
+      "rep": 1,
+      "success": true
+    },
+    {
+      "trial_id": "gemini4argonmedium_permadd_none_r2",
+      "model_label_reported": "Gemini 4 Argon Medium",
+      "task": "permadd",
+      "rep": 2,
+      "success": true
+    },
+    {
+      "trial_id": "gemini4argonmedium_permadd_none_r3",
+      "model_label_reported": "Gemini 4 Argon Medium",
+      "task": "permadd",
+      "rep": 3,
+      "success": true
+    },
+    {
+      "trial_id": "gemini4argonmedium_permadd_none_r4",
+      "model_label_reported": "Gemini 4 Argon Medium",
+      "task": "permadd",
+      "rep": 4,
+      "success": true
+    },
+    {
+      "trial_id": "gpt56solmedium_modmul_none_r0",
+      "model_label_reported": "GPT-5.6 Sol Medium",
+      "task": "modmul",
+      "rep": 0,
+      "success": true
+    },
+    {
+      "trial_id": "gpt56solmedium_modmul_none_r1",
+      "model_label_reported": "GPT-5.6 Sol Medium",
+      "task": "modmul",
+      "rep": 1,
+      "success": true
+    },
+    {
+      "trial_id": "gpt56solmedium_modmul_none_r2",
+      "model_label_reported": "GPT-5.6 Sol Medium",
+      "task": "modmul",
+      "rep": 2,
+      "success": true
+    },
+    {
+      "trial_id": "gpt56solmedium_modmul_none_r3",
+      "model_label_reported": "GPT-5.6 Sol Medium",
+      "task": "modmul",
+      "rep": 3,
+      "success": true
+    },
+    {
+      "trial_id": "gpt56solmedium_modmul_none_r4",
+      "model_label_reported": "GPT-5.6 Sol Medium",
+      "task": "modmul",
+      "rep": 4,
+      "success": true
+    },
+    {
+      "trial_id": "gpt56solmedium_permadd_none_r0",
+      "model_label_reported": "GPT-5.6 Sol Medium",
+      "task": "permadd",
+      "rep": 0,
+      "success": true
+    },
+    {
+      "trial_id": "gpt56solmedium_permadd_none_r1",
+      "model_label_reported": "GPT-5.6 Sol Medium",
+      "task": "permadd",
+      "rep": 1,
+      "success": true
+    },
+    {
+      "trial_id": "gpt56solmedium_permadd_none_r2",
+      "model_label_reported": "GPT-5.6 Sol Medium",
+      "task": "permadd",
+      "rep": 2,
+      "success": true
+    },
+    {
+      "trial_id": "gpt56solmedium_permadd_none_r3",
+      "model_label_reported": "GPT-5.6 Sol Medium",
+      "task": "permadd",
+      "rep": 3,
+      "success": true
+    },
+    {
+      "trial_id": "gpt56solmedium_permadd_none_r4",
+      "model_label_reported": "GPT-5.6 Sol Medium",
+      "task": "permadd",
+      "rep": 4,
+      "success": true
+    }
+  ],
+  "all30_per_trial_sha256": "73ea1b4dba1bfb03b84155e0f13a5b71d1583323fe894068fa3a169f8ecdf21c"
+}

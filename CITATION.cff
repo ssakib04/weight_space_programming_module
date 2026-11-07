@@ -1,0 +1,6 @@
+cff-version: 1.2.0
+message: "If you use these materials, please cite them as below. Pre-publication release candidate; no DOI or repository URL has been assigned yet."
+title: "How Reliably Can Language Models Construct Neural Network Weights? Evidence from Modular Arithmetic Tasks"
+type: software
+authors:
+  - name: "Kazi Sadman Sakib"

@@ -1,0 +1,11 @@
+instance,synthesizer,n,mean_test_acc,per_run,valid_code_rate,uses_training_data,uses_gradients,source
+A,adam,3.0,0.6997666666666666,"0.7007, 0.6945, 0.7041",1.0,True,True,Run 1 v3_run1_outputs/comparison_table.csv + per_run.csv
+A,sgd,3.0,0.7212999999999999,"0.7239, 0.7196, 0.7204",1.0,True,True,Run 1 v3_run1_outputs/comparison_table.csv + per_run.csv
+B,Qwen2.5-7B-Instruct,2.0,0.0518,"invalid, 0.1036",0.5,False,False,Run 1 v3_run1_outputs/comparison_table.csv + per_run.csv
+B,Qwen2.5-Coder-14B-Instruct,2.0,0.05,"0.1000, invalid",0.5,False,False,Run 1 v3_run1_outputs/comparison_table.csv + per_run.csv
+B+ridge,Qwen2.5-7B-Instruct,1.0,0.3244,0.3244,1.0,True,False,Run 1 v3_run1_outputs/comparison_table.csv + per_run.csv
+B+ridge,Qwen2.5-Coder-14B-Instruct,1.0,0.2423,0.2423,1.0,True,False,Run 1 v3_run1_outputs/comparison_table.csv + per_run.csv
+B,Claude — v2 replies replayed (r0-r2),3.0,0.04666666666666667,"0.1400, truncated(0), truncated(0)",0.3333333333333333,False,False,v3_test_outputs/replay_realcifar.csv
+B,Claude — Run 2 fresh (r10-r11),2.0,0.12505,"0.1142, 0.1359",1.0,False,False,v3_run2_outputs/per_run.csv
+B+ridge,Claude filters + ridge head (Run 2),2.0,0.5585,"0.5610, 0.5560",1.0,True,False,v3_run2_outputs/per_run.csv
+chance,uniform guess,,0.1,,,False,False,10 classes

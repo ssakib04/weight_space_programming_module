@@ -1,0 +1,8 @@
+Construct weights for a network computing (a+b) mod p, p=113, for ALL p^2 pairs a,b in 0..112.
+Architecture (fixed): x = concat(onehot(a), onehot(b)) (dim 226); h = W1 @ x, W1 shape (256, 226), no bias;
+act = h*h (elementwise square); logits = W2 @ act, W2 shape (113, 256), no bias. argmax(logits) must equal (a+b) mod p.
+
+Parameter names and shapes: {"W1": [256, 226], "W2": [113, 256]}
+Return ONLY one python code block defining `def build_weights():` (no arguments) that uses only `np` (numpy, already
+imported) and `math`; no other imports, no file or network access, no randomness unless seeded. It must return a dict mapping
+each parameter name to a numpy array of exactly the shape listed. Do not print large arrays; compute them in code.

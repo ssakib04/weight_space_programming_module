@@ -1,0 +1,90 @@
+{
+  "trial_id": "gemini4argonmedium_modmul_none_r0",
+  "channel": "cursor_Ask_instructed_not_reconfirmed",
+  "model_label_reported": "Gemini 4 Argon Medium",
+  "domain": {
+    "p": 113,
+    "n_pairs": 12544,
+    "zero_excluded": true,
+    "shapes_required": {
+      "W1": [
+        256,
+        226
+      ],
+      "W2": [
+        113,
+        256
+      ]
+    },
+    "success_threshold": 0.99
+  },
+  "contract_note": "FORMAT_RULES + sandbox provide np and math without requiring imports in generated code.",
+  "as_is_contract_outcome": {
+    "ok": true,
+    "success": true,
+    "all_acc": 1.0,
+    "error": null,
+    "error_kind": null,
+    "eval_wall_s": 0.2823709720032639,
+    "exact_counts": {
+      "correct": 12544,
+      "total": 12544,
+      "wrong": 0,
+      "accuracy": 1.0
+    },
+    "margins": {
+      "mean_margin_raw": 111.99997904770179,
+      "min_margin_raw": 111.99987773585053,
+      "mean_margin_norm": 10.630144151240092,
+      "min_margin_norm": 10.630139421616114,
+      "mean_prob_margin": 1.0,
+      "min_prob_margin": 1.0
+    }
+  },
+  "diagnostic_imports_path": null,
+  "weight_stats": {
+    "W1": {
+      "shape": [
+        256,
+        226
+      ],
+      "dtype": "float64",
+      "finite": true,
+      "min": -1.0,
+      "max": 1.0,
+      "nnz": 49396,
+      "sha256": "68e3f4facf960d52da3ca14acab291bca86bf67a7a4629ae32f09bde81c90d38"
+    },
+    "W2": {
+      "shape": [
+        113,
+        256
+      ],
+      "dtype": "float64",
+      "finite": true,
+      "min": -110.0,
+      "max": 73.2827135679508,
+      "nnz": 24754,
+      "sha256": "df96f78fc9ae00bbd5322322628de414f01760595ae79c03204b0d9561d39837"
+    }
+  },
+  "weight_load_error": null,
+  "structure_after_eval": {
+    "hardcodes_g_init_3_then_searches": true,
+    "dlog_table": true,
+    "neuron0_constant_on_a": true,
+    "freq_k_1_to_55_four_neurons_each": true,
+    "nyquist_neuron": true,
+    "bias_correction_on_W2_col0": true,
+    "unused_neuron_slots_likely": "256 neurons allocated; construction comments cite 1 + 4*55 + 1 = 222 used",
+    "no_recall_vs_reasoning_claim": true
+  },
+  "extraction_policy": {
+    "policy_id": "cursor_uniform_v1",
+    "as_is_contract": "Paste may omit imports; FORMAT_RULES state np already imported and math allowed; sandbox predefines ns np/numpy/math.",
+    "no_numerical_repair": true,
+    "no_silent_undocumented_imports_on_as_is_path": true,
+    "diagnostic_imports_only_if_needed": "If as-is fails for NameError on np/math despite contract, diagnostic path may prepend documented imports only; not used when as-is succeeds.",
+    "sonnet_note": "Sonnet required transparent removal of shell wrapper + module self-test; that was formatting/wrapper, not weight repair. Construction success reported separately from protocol formatting."
+  }
+}

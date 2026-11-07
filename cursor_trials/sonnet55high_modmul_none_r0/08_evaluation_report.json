@@ -1,0 +1,100 @@
+{
+  "trial_id": "sonnet55high_modmul_none_r0",
+  "channel": "cursor_Ask_not_API",
+  "model_label_reported": "Claude Sonnet 5.5 High",
+  "prompt_assumed": "START_HERE_modmul_none.txt",
+  "exact_paste_confirmed": false,
+  "domain": {
+    "p": 113,
+    "n_pairs": 12544,
+    "expected_pairs_excluding_zero": 12544,
+    "zero_as_input_excluded": true,
+    "shapes_required": {
+      "W1": [
+        256,
+        226
+      ],
+      "W2": [
+        113,
+        256
+      ]
+    },
+    "success_threshold": 0.99
+  },
+  "strict_protocol": {
+    "ok": false,
+    "success": false,
+    "all_acc": 0.0,
+    "error": "[name_error] generated code failed: Traceback (most recent call last):\n  File \"<TMPDIR>/runner.py\", line 54, in <module>\n  File \"<generated>\", line 49, in <module>\nNameError: name 'EOF' is not defined\n",
+    "error_kind": "name_error",
+    "extract_info": {
+      "n_fences": 0,
+      "truncated": false,
+      "method": "unfenced",
+      "compiles": true
+    },
+    "protocol_success": false,
+    "reason": "Shell heredoc wrapper + self-test, not Python-only build_weights block"
+  },
+  "diagnostic_transparent_extraction": {
+    "ok": true,
+    "success": true,
+    "all_acc": 1.0,
+    "error": null,
+    "error_kind": null,
+    "eval_wall_s": 0.3938785930004087,
+    "exact_counts": {
+      "correct": 12544,
+      "total": 12544,
+      "wrong": 0,
+      "accuracy": 1.0
+    },
+    "margins": {
+      "mean_margin_raw": 60.94952153916262,
+      "min_margin_raw": 60.949440002441406,
+      "mean_margin_norm": 3.8093452037856212,
+      "min_margin_norm": 3.8093407912752357,
+      "mean_prob_margin": 1.0,
+      "min_prob_margin": 1.0
+    }
+  },
+  "weight_stats": {
+    "W1": {
+      "shape": [
+        256,
+        226
+      ],
+      "dtype": "float64",
+      "finite": true,
+      "min": -1.0,
+      "max": 1.0,
+      "nnz": 57088,
+      "sha256": "8672f2bf5469c42e29ebf8898679444b174237140fb4acb05ddf138243afe2ac"
+    },
+    "W2": {
+      "shape": [
+        113,
+        256
+      ],
+      "dtype": "float64",
+      "finite": true,
+      "min": -1.0,
+      "max": 1.0,
+      "nnz": 28544,
+      "sha256": "c7b358a5da42bd7d7a5d0398ea84d1a2bb6c67967bfd915eab8f9543a384e31b"
+    }
+  },
+  "weight_load_error": null,
+  "recipe_structure": {
+    "searches_primitive_root": true,
+    "discrete_log_and_power_tables": true,
+    "fourier_k_1_to_32": true,
+    "neurons_256_from_32x4x2": true,
+    "W1_on_nonzero_symbols_only_ia": true,
+    "W2_readout_over_cvals": true
+  },
+  "scientific_claims": {
+    "strict_protocol_success": false,
+    "diagnostic_mathematical_success": true
+  }
+}

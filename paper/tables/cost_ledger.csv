@@ -1,0 +1,7 @@
+run,notebook,date_dhaka,claude_calls,input_tok,output_tok,claude_usd,gpu_wall,note
+v1 (single-run modadd),"(v1, pre-v2; outputs not on box)",2026-11-05 (early),1,,,0.074,~minutes,"From earlier report (8,947 tokens, $0.074). Not re-verifiable from box files."
+v2 benchmark,<KAGGLE_NOTEBOOK_URL_REDACTED>,2026-11-05 05:15–06:45 (Claude calls),101,50879.0,294204.0,3.0438,132 min,93 B + 8 C calls; v2_outputs/results.json llm_usage
+v3 offline tests,"(box, CPU)",2026-11-05,0,0.0,0.0,0.0,CPU only,V3_TEST_REPORT.md; fake client / cache replay
+v3 Run 1 (local models + A),<KAGGLE_NOTEBOOK_URL_REDACTED>,2026-11-05 ~15:30–18:13,0,0.0,0.0,0.0,160 min,"RUN_CLAUDE=False, DRY_RUN_CLAUDE=True"
+v3 Run 2 (Claude modmul + CIFAR),<KAGGLE_NOTEBOOK_URL_REDACTED>,2026-11-05 19:53–20:03 (Claude calls),17,8133.0,70291.0,0.7192,50 min,18 API attempts = 17 billed + 1 temperature-rejected (unbilled)
+Final report build (this package),"(box, CPU)",2026-11-05,0,0.0,0.0,0.0,CPU only,No API calls

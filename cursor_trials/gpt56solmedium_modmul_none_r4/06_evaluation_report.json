@@ -1,0 +1,97 @@
+{
+  "rep": 4,
+  "ok": true,
+  "success": true,
+  "all_acc": 1.0,
+  "error": null,
+  "error_kind": null,
+  "eval_wall_s": 0.21037410899589304,
+  "exact_torch": {
+    "correct": 12544,
+    "total": 12544,
+    "wrong": 0,
+    "accuracy": 1.0,
+    "param_dtype": "torch.float32"
+  },
+  "np64": {
+    "dtype": "<class 'numpy.float64'>",
+    "correct": 12544,
+    "total": 12544,
+    "wrong": 0,
+    "accuracy": 1.0,
+    "min_margin_raw": 0.0015731849821828403,
+    "mean_margin_raw": 0.00157318498218338,
+    "finite_logits": true
+  },
+  "np32": {
+    "dtype": "<class 'numpy.float32'>",
+    "correct": 12544,
+    "total": 12544,
+    "wrong": 0,
+    "accuracy": 1.0,
+    "min_margin_raw": 0.0015728473663330078,
+    "mean_margin_raw": 0.0015731554012745619,
+    "finite_logits": true
+  },
+  "harness_margins": {
+    "mean_margin_raw": 0.001573155444039374,
+    "min_margin_raw": 0.0015728473663330078,
+    "mean_margin_norm": 0.002224777821839603,
+    "min_margin_norm": 0.0022243418174900053,
+    "mean_prob_margin": 2.9922524624203037e-05,
+    "min_prob_margin": 2.99166666040164e-05
+  },
+  "weight_stats": {
+    "W1": {
+      "shape": [
+        256,
+        226
+      ],
+      "dtype": "float64",
+      "finite": true,
+      "min": -1.0,
+      "max": 1.0,
+      "nnz": 1792,
+      "sha256": "f423ff31135b8f702f947d484b2ad12dbe97c8dd68cba3e30c726318b1bbdc3a"
+    },
+    "W2": {
+      "shape": [
+        113,
+        256
+      ],
+      "dtype": "float64",
+      "finite": true,
+      "min": -0.25,
+      "max": 0.25,
+      "nnz": 892,
+      "sha256": "0717de4baa5d2f44f0ede84959f9456a7b77ceac5f98bbd3a6c261be5970bed9"
+    }
+  },
+  "weight_load_error": null,
+  "connected": {
+    "W1_nonzero_rows": 8,
+    "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "W2_nonzero_cols": 8,
+    "n_connected": 8,
+    "connected_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ]
+  },
+  "dtype_acc_same": true
+}

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+
+<html><head><meta charset="utf-8"/><title>How Reliably Can Language Models Construct Neural Network Weights? Evidence from Modular Arithmetic Tasks</title><meta content="Kazi Sadman Sakib" name="author"/>
+<style>
+@page{size:A4;margin:18mm 16mm 18mm 16mm}
+body{font-family:"Times New Roman",Times,serif;font-size:10pt;line-height:1.35;color:#111}
+h1{font-size:15pt;text-align:center;margin:0 0 6pt;line-height:1.25}
+h2{font-size:12pt;margin:14pt 0 6pt;border-bottom:1px solid #333;padding-bottom:2pt;page-break-after:avoid}
+h3{font-size:10.5pt;margin:10pt 0 4pt;page-break-after:avoid}
+.banner{background:#e8f5e9;border:2px solid #2e7d32;padding:8px 10px;margin:0 0 10pt;font-size:9pt}
+.meta{text-align:center;font-size:9.5pt;margin-bottom:10pt}
+p{text-align:justify;margin:0 0 6pt}
+table.data{width:100%;border-collapse:collapse;font-size:8.5pt;margin:5pt 0 8pt}
+table.data th,table.data td{border:1px solid #444;padding:2px 4px;vertical-align:top}
+table.data th{background:#f0f0f0;text-align:left}
+figure{margin:8pt 0 10pt;page-break-inside:avoid}
+figcaption{font-size:8pt;font-style:italic;color:#333;margin-top:3pt}
+pre.code{background:#f6f6f6;border:1px solid #bbb;padding:6px;font-size:6.8pt;line-height:1.22;white-space:pre-wrap;word-break:break-word;font-family:ui-monospace,Menlo,Consolas,monospace}
+.fnlabel{font-size:8pt;background:#eee;border:1px solid #aaa;padding:4px 6px;margin:6pt 0 3pt}
+.eqbox{display:inline-block;border:1px solid #999;background:#fafafa;padding:6px 12px;margin:4pt auto}
+.eq{text-align:center;margin:6pt 0}
+.ref{font-size:8.5pt;margin:0 0 4pt;padding-left:1.3em;text-indent:-1.3em}
+.small{font-size:8pt;color:#333}
+.foot{font-size:8pt;color:#444;margin-top:12pt;border-top:1px solid #999;padding-top:4pt}
+ul,ol{margin:0 0 6pt 15pt} li{margin-bottom:2pt}
+code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:8.5pt}
+</style></head><body data-sequential-figures="true">
+<div class="banner"><b>REVIEW MANUSCRIPT v3 — PRE-PUBLICATION</b> (built 7 Nov 2026, Asia/Dhaka). Not posted, not submitted, not peer reviewed. Revises the audited v2 build with the author-selected title, a dated author attestation for Cursor session conditions, and CIFAR-10 moved to an exploratory appendix. No new training, evaluations, or model calls. Earlier drafts and the audited v2 snapshot are preserved unchanged.</div>
+<h1>How Reliably Can Language Models Construct Neural Network Weights?<br/>
+Evidence from Modular Arithmetic Tasks</h1>
+<div class="meta">Kazi Sadman Sakib<br/>
+<span class="small">Affiliation and venue omitted (not provided). LLM assistance used for drafting/analysis under human accountability for all claims and numbers.</span></div>
+<h2>Abstract</h2>
+<p>
+We ask whether language models can <i>directly construct working neural network weights</i>—emitting a Python <code>build_weights()</code> function that returns NumPy arrays of exact shapes—without gradient training, on small modular-arithmetic networks with known analytic solutions.
+Across separately labelled channels we measure how often closed chat models succeed on these tasks, at small, exploratory sample sizes.
+On a Cursor chat channel (no-hint prompts; <i>n</i>=5 per model×task cell; model labels user-reported; session conditions author-attested), construction success reaches <b>27/30</b>, including a perfect <b>15/15</b> on permuted modular addition.
+Via the Anthropic API, Claude Sonnet (<code>claude-sonnet-5-5</code>) reaches <b>38/45</b> on modular multiplication across hint levels (full 12/15, partial 13/15, none 13/15), and <b>92/105</b> across modadd/modmul/parity under a corrected harness.
+Successful constructions are compact analytic programs (Fourier features; discrete-log reduction; supplied-VAL adaptation) that we verify on the full finite domain (12,544 or 12,769 inputs).
+Open-weight pilots are a genuine boundary: Phi-4 and Mistral-Small-24B complete a verified NF4 run with <b>0/12</b> successes (5 valid code, 7 runtime/shape failures); earlier Qwen runs are 0/72 under a shorter 2048-token cap.
+We report harness undercounting (63→78/90 on identical Claude replies), verbatim success and failure programs, and real Instance A learning curves from logged checkpoints.
+This is an exploratory, heterogeneous multi-channel study of analytic weight construction—not a claim of general-purpose model writing, not a definitive ranking, and not a time-trend analysis.
+ The Cursor count is mathematical construction success after documented extraction, including one formatting exception, not a strict raw-response compliance rate. Reliability estimates are exploratory: with <i>n</i>=5 per cell, the per-cell 95% intervals are wide, and channels are not a controlled head-to-head ranking.</p>
+<h2>1. Introduction</h2>
+<p>
+Gradient descent writes nearly all modern neural weights. A complementary question is whether a language model, given a textual task specification and a fixed architecture, can emit those weights directly.
+Following Takehi, Teoh, Zhang, and Khattab (2026), who introduced the term <i>Weight-Space Programming</i>, we study a checkable slice of that idea: square-activation MLPs for modular arithmetic, where analytic constructions are known (Gromov, 2023).
+</p>
+<p>
+<b>Lead finding.</b> On the modular tasks we study, closed models in our API and Cursor channels frequently construct weights that achieve ≥0.99 accuracy across the complete input domain—without training data or gradients.
+The practical artifact is a short, auditable <code>build_weights()</code> program, not a vague claim that “models write models.”
+Failures and open-weight negatives delimit the boundary; they are not the headline.
+</p>
+<p>
+Channels differ in interface, sampling control, and how session conditions are documented; we report them separately and do not pool them into a leaderboard.
+</p>
+<h2>2. Related work</h2>
+<p>
+Takehi et al. (2026) coin Weight-Space Programming in a blog post (MIT CSAIL authors) with released logs (https://rikiyat.github.io/blog/weight-space-programming/). We attribute the term to them and do not rest our claims on their single-run demonstrations.
+Gromov (2023, arXiv:2301.02679) gives closed-form Fourier-feature solutions for modular addition.
+Weiss et al. (2021) introduce RASP; Lindner et al. (2023, arXiv:2301.05062) compile RASP to transformer weights (Tracr).
+Ha, Dai, and Le (2016, arXiv:1609.09106) train hypernetworks to generate weights.
+Our Instance B setting asks a frozen chat model to emit weights for a fixed MLP from natural language.
+</p>
+<h2>3. Methods</h2>
+<h3>3.1 Instances</h3>
+<ul>
+<li><b>A:</b> gradient descent (AdamW/SGD/Adam) on labelled data.</li>
+<li><b>B:</b> LLM returns <code>build_weights()</code> → NumPy dict; no data, no gradients. Primary object.</li>
+<li><b>B+ridge (CIFAR only):</b> LLM filters + ridge head on 10k images (uses data; diagnostic).</li>
+<li><b>Oracle:</b> hand analytic reference.</li>
+</ul>
+<h3>3.2 Tasks</h3>
+<p>
+Modular nets: concat one-hots → <code>h=(x W1ᵀ)²</code> → logits <code>h W2ᵀ</code>; shapes W1 (256×226), W2 (113×256). Success: execute, exact shapes, finite weights, accuracy ≥0.99 on all inputs. <code>np</code>/<code>math</code> pre-provided.
+</p>
+<ul>
+<li><b>modadd:</b> (a+b) mod 113; 12,769 pairs.</li>
+<li><b>modmul:</b> (a·b) mod 113, a,b∈1..112; 12,544 pairs; discrete log base g=3.</li>
+<li><b>permadd:</b> inverseVAL((VAL[a]+VAL[b]) mod 113) with VAL printed in the prompt (supplied-table adaptation).</li>
+<li><b>parity:</b> 16-bit inputs; label = XOR of bits in subset {2,5,10,11,12,14} (seed 1234); W1 64×16 + biases, ReLU, W2 2×64; all 65,536 inputs. In API aggregate only.</li>
+<li><b>CIFAR-10:</b> small CNN; exploratory endpoints.</li>
+</ul>
+<table class="data"><thead><tr><th>item</th><th>value</th></tr></thead><tbody><tr><td>Algorithmic split (train,val,test)</td><td>0.3, 0.1 (test 0.6)</td></tr><tr><td>Seeds A</td><td>0,1,2</td></tr><tr><td>Algo checkpoints</td><td>100,500,1000,3000,10000,20000</td></tr><tr><td>CIFAR checkpoints</td><td>200,1000,3000 (from A_curves)</td></tr><tr><td>AdamW wd / betas</td><td>1.0 / (0.9, 0.98)</td></tr><tr><td>SGD momentum / wd</td><td>0.9 / 1e-4</td></tr><tr><td>Algo LR grid AdamW</td><td>3e-4, 1e-3, 3e-3</td></tr><tr><td>Algo LR grid SGD</td><td>0.03, 0.1, 0.3</td></tr><tr><td>CIFAR LR Adam / SGD</td><td>3e-4,1e-3 / 0.01,0.05</td></tr><tr><td>Success threshold (algo B)</td><td>accuracy &gt;= 0.99 on all inputs</td></tr><tr><td>API model id</td><td>claude-sonnet-5-5</td></tr><tr><td>API algo max_tokens</td><td>6000</td></tr><tr><td>Local Phi/Mistral max_new_tokens</td><td>8192</td></tr><tr><td>Local Qwen max_new_tokens</td><td>2048 (caveat)</td></tr><tr><td>Parity subset (seed 1234)</td><td>{2,5,10,11,12,14}</td></tr></tbody></table><p id="audit-methods">Algorithmic Instance A uses full-batch cross-entropy, gradient clipping at norm 1, and seed-specific random splits. For each task/optimizer, Figure 1 selects one learning rate by highest mean validation accuracy across seeds at the final logged checkpoint, then displays all logged validation checkpoints (sample SD, not a confidence interval). Test accuracy does not select the learning rate. Lines connect measured checkpoints; no intermediate measurements are implied. CIFAR instead uses 45,000 training and 5,000 validation images from the official training set and the official 10,000-image test set; batch size 128, random horizontal flips, Adam or SGD (momentum 0.9, weight decay 5e-4), and the same final-validation LR rule. Inputs use channel means (0.4914,0.4822,0.4465) and SDs (0.2470,0.2435,0.2616). The ridge diagnostic uses 10,000 training images, standardized frozen features and ridge parameter 1.0 (see v3_src/60_cifar.py).</p>
+<p class="small">Table: key hyperparameters and protocol constants from <span class="mono">v3_src/01_config.py</span>, <span class="mono">40_A.py</span>, and logged curves.</p>
+<h3>3.3 Channels</h3>
+<ol>
+<li><b>API Claude</b> — <code>claude-sonnet-5-5</code>; temperature rejected (default sampling); algo max_tokens=6000; v2 replies re-scored in v3 harness; Run 2 fresh modmul reps 10–14.</li>
+<li><b>Cursor</b> — user-reported labels Sonnet 5.5 High / Gemini 4 Argon Medium / GPT-5.6 Sol Medium; no-hint; 5×2×3=30; protocol package frozen post-pilot for that channel only. <b>Session conditions (author attestation, recorded 7 Nov 2026, 13:20 Asia/Dhaka):</b> the author states that every Cursor query used Ask mode, the frozen prompt pasted unchanged, an empty workspace, and a separate chat per query. This statement was given after collection and is recorded as an attestation; it was not independently verified from Cursor logs, and contemporaneous trial metadata are left unchanged. Model labels are those shown in the Cursor model picker as reported by the author; provider-side model identities, versions, and sampling settings are not observable in this channel.</li>
+<li><b>Open local</b> — Qwen2.5-7B/14B (Run 1, 4-bit, max_new_tokens=2048); Phi-4 &amp; Mistral-Small-24B-Instruct-2501 NF4 on T4×2 (max_new_tokens=8192) after bitsandbytes/CUDA repair.</li>
+</ol>
+<h2>4. Results</h2>
+<h3>4.1 Gradient baselines (Instance A) — real learning curves</h3>
+<figure><img alt="fig01_learning_curves_A" src="figures/fig01_learning_curves_A.png" style="max-width:100%;height:auto;"/><figcaption>Figure 1. Validation accuracy vs training step from v3_run1_outputs/A_curves.csv at validation-selected LR (mean±sd, seeds 0–2). Only logged checkpoints; lines are visual guides. The 30/10/60 split applies to algorithmic tasks, not CIFAR. Run 2 / local-pilot A_curves were empty because A was disabled—those runs contribute no fabricated curves.</figcaption></figure>
+<h3>4.2 Cursor channel — 27/30, permadd 15/15</h3>
+<table class="data"><thead><tr><th>model</th><th>modmul</th><th>permadd</th></tr></thead><tbody><tr><td>Claude Sonnet 5.5 High</td><td>4</td><td>5</td></tr><tr><td>Gemini 4 Argon Medium</td><td>3</td><td>5</td></tr><tr><td>GPT-5.6 Sol Medium</td><td>5</td><td>5</td></tr></tbody></table><p id="audit-extraction">Extraction policy. Cursor 27/30 counts mathematical construction success, not raw-response format compliance. In sonnet55high_modmul_none_r0, the strict Python-only path fails on a shell heredoc wrapper/self-test (NameError: EOF); the saved diagnostic extracts the unchanged build_weights function and achieves 12,544/12,544. This formatting exception is included in 27/30, without numerical repair, and must not be described as every raw response executing unchanged. The per-cell counts and Figure 2 use this construction endpoint. Provider identities are user-reported and session conditions are author-attested (above); neither is independently verified.</p>
+<p class="small">Table: construction successes / 5. Total 27/30. Failures: sonnet55high_modmul_none_r3; gemini4argonmedium_modmul_none_r2; gemini4argonmedium_modmul_none_r4.</p>
+<figure><img alt="fig02_cursor_3x2" src="figures/fig02_cursor_3x2.png" style="max-width:100%;height:auto;"/><figcaption>Figure 2. Cursor results with per-trial dots and per-cell Wilson 95% CIs (n=5). Exploratory; labels user-reported.</figcaption></figure>
+<h3>4.3 API Claude — modmul 38/45 and algorithmic 92/105</h3>
+<table class="data"><thead><tr><th>Hint</th><th>Replay</th><th>Fresh</th><th>Successes</th><th>n</th><th>95% CI low</th><th>95% CI high</th><th>Truncated</th><th>Wrong</th></tr></thead><tbody><tr><td>full</td><td>8/10</td><td>4/5</td><td>12</td><td>15</td><td>0.548</td><td>0.930</td><td>2</td><td>1</td></tr><tr><td>partial</td><td>8/10</td><td>5/5</td><td>13</td><td>15</td><td>0.621</td><td>0.963</td><td>1</td><td>1</td></tr><tr><td>none</td><td>8/10</td><td>5/5</td><td>13</td><td>15</td><td>0.621</td><td>0.963</td><td>1</td><td>1</td></tr></tbody></table>
+<figure><img alt="fig03_api_modmul_hints" src="figures/fig03_api_modmul_hints.png" style="max-width:100%;height:auto;"/><figcaption>Figure 3. API Claude modmul success by hint (combined 38/45).</figcaption></figure>
+<p>
+Across modadd/modmul/parity cells in <span class="mono">final_all_tasks.csv</span>: <b>92/105</b> successes (parity 10/10×3). Claude API was not run on permadd.
+Replaying 90 saved replies: <b>63→78/90</b> after harness fixes (Fig. 5).
+</p>
+<figure><img alt="fig04_api_failure_taxonomy" src="figures/fig04_api_failure_taxonomy.png" style="max-width:100%;height:auto;"/><figcaption>Figure 4. Unsuccessful API Claude replies by task and outcome under the v3 harness.</figcaption></figure>
+<figure><img alt="fig09_replay_v2_vs_v3" src="figures/fig09_replay_v2_vs_v3.png" style="max-width:100%;height:auto;"/><figcaption>Figure 5. Same replies, different harness — undercounting corrected.</figcaption></figure>
+<figure><img alt="fig10_robustness_modmul" src="figures/fig10_robustness_modmul.png" style="max-width:100%;height:auto;"/><figcaption>Figure 6. Exploratory logged modmul input-noise diagnostic: means over 14 successful fresh Run-2 Claude constructions (selected on clean accuracy), one Run-2 analytic oracle, and three Run-1 AdamW seeds at LR 0.0003. Independent Gaussian noise is added to all input coordinates at σ=0.1,0.3,0.5, with evaluation RNG seed 0; σ=0 is clean all-domain accuracy. All 12,544 inputs are scored at each level. Curves are conditional, cross-run diagnostics, not matched robustness or model-ranking evidence; no new evaluations were run for this figure.</figcaption></figure>
+<h3>4.4 Open-weight models — completed negative pilots</h3>
+<figure><img alt="fig05_open_models_pilot" src="figures/fig05_open_models_pilot.png" style="max-width:100%;height:auto;"/><figcaption>Figure 7. Phi-4 / Mistral-Small-24B NF4 pilot: 0/12 successes; 5/12 valid code; 7 runtime/shape failures. Infrastructure completed all 12 generations.</figcaption></figure>
+<p>
+Qwen2.5-7B/14B: <b>0/72</b> algorithmic successes in Run 1 under <code>LOCAL_MAX_NEW_TOKENS=2048</code>. This is <b>not</b> a matched token-budget comparison to the 8192 Phi/Mistral pilot and is reported as a caveated earlier run, not a ranking.
+</p>
+<p>CIFAR-10 results are outside the modular-arithmetic scope and are reported separately in Appendix B as exploratory endpoints only.</p>
+<h2>5. What successful constructions do</h2>
+<figure><img alt="fig07_conceptual_paths" src="figures/fig07_conceptual_paths.png" style="max-width:100%;height:auto;"/><figcaption>Figure 8. Conceptual Instance A vs B paths (illustration only).</figcaption></figure>
+<div class="eq"><div class="eqbox">((<i>u</i>+<i>v</i>)<sup>2</sup> − (<i>u</i>−<i>v</i>)<sup>2</sup>) / 4 = <i>uv</i></div></div>
+<figure><img alt="fig08_fourier_identity" src="figures/fig08_fourier_identity.png" style="max-width:100%;height:auto;"/><figcaption>Figure 9. Product identity and cos-phase argmax explanation.</figcaption></figure>
+<p>
+With trigonometric features, readout scores peak when θ<sub>a</sub>+θ<sub>b</sub>≡θ<sub>c</sub> (mod 2π). Modular multiplication reduces to addition of discrete logs base 3 on ℤ<sub>112</sub>. Effective width is counted as connected hidden units (e.g., 8), not FLOPs.
+</p>
+<div class="fnlabel">Verbatim success — <span class="mono">gpt56solmedium_permadd_none_r0</span> — success=True, 12769/12769, 8 connected units, scored as-is</div>
+<pre class="code">def build_weights():
+    VAL = np.array([
+        34, 71, 25, 0, 20, 109, 88, 41, 49, 81, 66, 42, 100, 90, 39,
+        75, 72, 70, 8, 45, 64, 55, 3, 17, 104, 57, 82, 52, 2, 95, 96,
+        60, 97, 10, 38, 58, 91, 103, 37, 54, 51, 40, 76, 16, 101, 93,
+        14, 18, 85, 77, 112, 43, 106, 86, 7, 44, 27, 11, 56, 74, 65,
+        69, 102, 13, 61, 62, 87, 53, 31, 67, 50, 12, 4, 6, 83, 47,
+        15, 24, 89, 46, 28, 33, 26, 30, 108, 105, 23, 94, 36, 29,
+        63, 48, 98, 111, 21, 78, 68, 107, 110, 19, 5, 9, 99, 1, 73,
+        32, 92, 80, 35, 22, 79, 59, 84
+    ], dtype=np.float64)
+
+    theta = (2.0 * math.pi / 113.0) * VAL
+    cs = np.cos(theta)
+    sn = np.sin(theta)
+
+    W1 = np.zeros((256, 226), dtype=np.float64)
+    W2 = np.zeros((113, 256), dtype=np.float64)
+
+    components = [
+        (cs, cs, cs),
+        (sn, sn, -cs),
+        (sn, cs, sn),
+        (cs, sn, sn),
+    ]
+
+    for i, (u, v, out) in enumerate(components):
+        plus = 2 * i
+        minus = plus + 1
+
+        W1[plus, :113] = u
+        W1[plus, 113:] = v
+        W1[minus, :113] = u
+        W1[minus, 113:] = -v
+
+        W2[:, plus] = out / 4.0
+        W2[:, minus] = -out / 4.0
+
+    return {"W1": W1, "W2": W2}
+</pre>
+<div class="fnlabel">Verbatim failure (near miss) — <span class="mono">sonnet55high_modmul_none_r3</span> — success=False, 12320/12544 (acc≈0.982), scored as-is, no repair</div>
+<pre class="code">def build_weights():
+    p = 113
+    n = p - 1  # order of the multiplicative group
+
+    # find a primitive root g mod p
+    g = None
+    for cand in range(2, p):
+        if len({pow(cand, e, p) for e in range(n)}) == n:
+            g = cand
+            break
+
+    # discrete log table: log[g^e mod p] = e
+    log = np.zeros(p, dtype=np.int64)
+    for e in range(n):
+        log[pow(g, e, p)] = e
+
+    vals = np.arange(1, p)      # nonzero residues
+    L = log[vals].astype(float) # discrete logs (used for inputs a, b and for class c)
+
+    W1 = np.zeros((256, 2 * p))
+    W2 = np.zeros((p, 256))
+    ca = vals          # columns of one-hot(a)
+    cb = p + vals      # columns of one-hot(b)
+
+    bias = np.zeros(n)  # l-dependent constant produced by the squares
+
+    # Frequencies k = 1..55: four neurons each
+    # h1 = cos i + cos j        h2 = -sin i + sin j     -&gt; act1+act2 = 2 + 2cos(w(i+j))
+    # h3 = cos i + sin j        h4 =  sin i + cos j     -&gt; act3+act4 = 2 + 2sin(w(i+j))
+    for k in range(1, 56):
+        w = 2.0 * math.pi * k / n
+        r = 4 * (k - 1)
+        ci, si = np.cos(w * L), np.sin(w * L)
+
+        W1[r, ca] = ci;      W1[r, cb] = ci
+        W1[r + 1, ca] = -si; W1[r + 1, cb] = si
+        W1[r + 2, ca] = ci;  W1[r + 2, cb] = si
+        W1[r + 3, ca] = si;  W1[r + 3, cb] = ci
+
+        # output: cos(w(S-l)) = cos(wS)cos(wl) + sin(wS)sin(wl)
+        W2[1:, r] = 0.5 * ci
+        W2[1:, r + 1] = 0.5 * ci
+        W2[1:, r + 2] = 0.5 * si
+        W2[1:, r + 3] = 0.5 * si
+
+        bias += ci + si
+
+    # Frequency k = 56 (w = pi): one neuron, h = (-1)^i + (-1)^j
+    r = 220
+    sg = np.cos(math.pi * L)
+    W1[r, ca] = sg
+    W1[r, cb] = sg
+    W2[1:, r] = 0.5 * sg
+    bias += sg
+
+    # Constant neuron: h = 1 for every valid input (a in 1..112), act = 1.
+    # It cancels the class-dependent constant left over from the squares.
+    r = 221
+    W1[r, ca] = 1.0
+    W2[1:, r] = -bias[log[vals]]
+
+    # Resulting logit for class c (l = log c), S = log a + log b, d = S - l mod 112:
+    #   (112*[d==0] - 1 + (-1)^d) / 2   -&gt; 56 at the correct class, &lt;= 0 elsewhere.
+    # Class 0 has all-zero weights (logit 0), so it never wins.
+    return {"W1": W1, "W2": W2}
+</pre>
+<h2>6. Harness lessons</h2>
+<p>
+Missing builtins and brittle import stripping in v2 erased correct math. Truncation and wrong-weights must stay separate buckets. Silent model fallback is forbidden. Cursor shell wrappers are format provenance, not numerical repair. Aggregate undercounts must be re-derived from per-trial reports (27 not 24).
+</p>
+<h2>7. Limitations</h2>
+<ul>
+<li>Heterogeneous channels; not a controlled head-to-head ranking.</li>
+<li>Small <i>n</i> (Cursor 5 per cell, API 10–15 per cell, local 3 per cell): reliability rates are exploratory estimates with wide intervals.</li>
+<li>Cursor model labels user-reported; session conditions author-attested after collection, not independently verified.</li>
+<li>API default sampling only; 6000-token cap.</li>
+<li>Qwen vs Phi/Mistral token budgets differ.</li>
+<li>CIFAR-10 is an exploratory appendix only; without random-filter controls we make no feature-advantage claim.</li>
+<li>Toy architectures; no general “write any model” claim.</li>
+<li>No recall-vs-reasoning identification design.</li>
+</ul>
+<h2>8. Conclusion</h2>
+<p>
+Language models in our closed-model channels can construct compact, full-domain-correct weight programs for the modular-arithmetic networks we study—without gradient training.
+Open-weight pilots in this package did not clear the same bar under verified infrastructure.
+The reusable knowledge is the analytic constructions, the evaluation protocol, the harness pitfalls, and the released artifacts—not a claim that models already prepare entire production systems from a prompt.
+</p>
+<h2>References</h2>
+<div class="ref">Andrey Gromov. Grokking modular arithmetic. arXiv:2301.02679, 2023.</div>
+<div class="ref">David Ha, Andrew Dai, and Quoc V. Le. HyperNetworks. arXiv:1609.09106, 2016.</div>
+<div class="ref">David Lindner et al. Tracr: Compiled Transformers as a Laboratory for Interpretability. arXiv:2301.05062, 2023.</div>
+<div class="ref">Rikiya Takehi, Jayden Teoh, Alex Zhang, and Omar Khattab. Sparks of Weight-Space Programming: LLMs can natively read &amp; write neural network weights. Blog post, November 2026. https://rikiyat.github.io/blog/weight-space-programming/</div>
+<div class="ref">Gail Weiss, Yoav Goldberg, and Eran Yahav. Thinking Like Transformers. ICML 2021. arXiv:2106.06981.</div>
+<h2>Appendix A. Artifacts</h2>
+<ul>
+<li>Release candidate (local, not yet published): <span class="mono">github_release_candidate/</span> — frozen prompts, original responses, saved weights for all 30 Cursor trials, API and open-model scores, sanitized notebooks, offline evaluator.</li>
+<li>Figure sources and hashes: <span class="mono">SOURCE_TO_FIGURE_MANIFEST.md</span>.</li>
+<li>Cursor session attestation addendum: <span class="mono">cursor_trials/ATTESTATION_ADDENDUM_2026-11-07.json</span>.</li>
+</ul>
+<h2>Appendix B. CIFAR-10 exploratory endpoints</h2>
+<p>We include these logged endpoints for completeness. By the author's scoping decision, this paper makes <b>no</b> claim that LLM-written filters provide a feature advantage, and no matched random-filter controls were run; such controls would be required for any feature-quality claim and are left to future work. Pure LLM-written CNN weights were near chance; the B+ridge rows use 10,000 labelled training images for a closed-form readout and are therefore data-assisted diagnostics, not weight construction without data.</p>
+<figure><img alt="fig06_cifar_endpoints" src="figures/fig06_cifar_endpoints.png" style="max-width:100%;height:auto;"/><figcaption>Figure 10. CIFAR endpoints. Pure Claude B ≈11–14%; B+ridge ≈56%; trained ≈70–72%. Exploratory only; no random-filter control and no feature-advantage claim.</figcaption></figure>
+</body></html>

@@ -1,0 +1,10 @@
+{
+  "time_dhaka": "2026-11-06T12:26:23.530094+06:00",
+  "quantize_ok": true,
+  "dequantize_ok": true,
+  "torch_version_cuda": "13.0",
+  "bnb": "0.50.2",
+  "has_cuda130": true,
+  "out_is_path": true,
+  "hf_home": "/tmp/wsp_hf_cache_shared"
+}

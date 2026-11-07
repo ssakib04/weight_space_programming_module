@@ -1,0 +1,29 @@
+{
+  "permadd_N": 12769,
+  "shapes": {
+    "W1": [
+      256,
+      226
+    ],
+    "W2": [
+      113,
+      256
+    ]
+  },
+  "VAL_matches_PERM": true,
+  "VAL_sha256": "f98c1fc0f6fc3a989df6ab90d54856de572eb97066acc25e4422084788a27dfd",
+  "PERM_list_head": [
+    34,
+    71,
+    25,
+    0,
+    20,
+    109,
+    88,
+    41
+  ],
+  "oracle_all_acc": 1.0,
+  "oracle_success": true,
+  "user_prompt_matches_task_prompt_none": true,
+  "mapping_note": "Fixed VAL/PERM instance for reliability repeats; not novel held-out mapping; not recall-proof"
+}

@@ -1,0 +1,72 @@
+{
+  "rep": 4,
+  "ok": true,
+  "success": true,
+  "all_acc": 1.0,
+  "error": null,
+  "error_kind": null,
+  "eval_wall_s": 0.2179033190041082,
+  "exact_torch": {
+    "correct": 12769,
+    "total": 12769,
+    "wrong": 0,
+    "accuracy": 1.0,
+    "param_dtype": "torch.float32"
+  },
+  "np64": {
+    "dtype": "<class 'numpy.float64'>",
+    "correct": 12769,
+    "total": 12769,
+    "wrong": 0,
+    "accuracy": 1.0,
+    "min_margin_raw": 112.99999999999847,
+    "mean_margin_raw": 112.99999999999956,
+    "finite_logits": true
+  },
+  "np32": {
+    "dtype": "<class 'numpy.float32'>",
+    "correct": 12769,
+    "total": 12769,
+    "wrong": 0,
+    "accuracy": 1.0,
+    "min_margin_raw": 112.99986267089844,
+    "mean_margin_raw": 112.9999771118164,
+    "finite_logits": true
+  },
+  "harness_margins": {
+    "mean_margin_raw": 112.99997990148556,
+    "min_margin_raw": 112.99986267089844,
+    "mean_margin_norm": 10.63014389814593,
+    "min_margin_norm": 10.63013660416558,
+    "mean_prob_margin": 1.0,
+    "min_prob_margin": 1.0
+  },
+  "weight_stats": {
+    "W1": {
+      "shape": [
+        256,
+        226
+      ],
+      "dtype": "float64",
+      "finite": true,
+      "min": -0.9999758458848851,
+      "max": 1.0,
+      "nnz": 50625,
+      "sha256": "57da4b4dedbdd07a20c3a67bb37785636678c0466fc1d590e4906793eaa609d6"
+    },
+    "W2": {
+      "shape": [
+        113,
+        256
+      ],
+      "dtype": "float64",
+      "finite": true,
+      "min": -112.0,
+      "max": 72.93340060036148,
+      "nnz": 25313,
+      "sha256": "d233610bbcdc35fb01930f8e80c99645c65eb4bd5a376cf7876766fca672aa2a"
+    }
+  },
+  "weight_load_error": null,
+  "dtype_acc_same": true
+}

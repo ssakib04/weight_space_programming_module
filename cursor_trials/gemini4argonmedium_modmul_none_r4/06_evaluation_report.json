@@ -1,0 +1,79 @@
+{
+  "rep": 4,
+  "ok": true,
+  "success": false,
+  "all_acc": 0.24920280277729034,
+  "error": null,
+  "error_kind": null,
+  "eval_wall_s": 0.2322239109998918,
+  "source_array_dtype_intent": "float32",
+  "exact_torch": {
+    "correct": 3126,
+    "total": 12544,
+    "wrong": 9418,
+    "accuracy": 0.24920280612244897,
+    "param_dtype": "torch.float32"
+  },
+  "np64": {
+    "dtype": "<class 'numpy.float64'>",
+    "correct": 4904,
+    "total": 12544,
+    "wrong": 7640,
+    "accuracy": 0.3909438775510204,
+    "min_margin_raw": -56.00000013461476,
+    "mean_margin_raw": -1.278467105685763,
+    "finite_logits": true
+  },
+  "np32": {
+    "dtype": "<class 'numpy.float32'>",
+    "correct": 3126,
+    "total": 12544,
+    "wrong": 9418,
+    "accuracy": 0.24920280612244897,
+    "min_margin_raw": -56.000022888183594,
+    "mean_margin_raw": -1.2784734964370728,
+    "finite_logits": true
+  },
+  "harness_margins": {
+    "mean_margin_raw": -1.2784735414446617,
+    "min_margin_raw": -56.000022888183594,
+    "mean_margin_norm": -0.08402358549450271,
+    "min_margin_norm": -3.073400721762272,
+    "mean_prob_margin": -0.067284707629152,
+    "min_prob_margin": -1.0
+  },
+  "weight_stats": {
+    "W1": {
+      "shape": [
+        256,
+        226
+      ],
+      "dtype_stored": "float64",
+      "finite": true,
+      "min": -1.0,
+      "max": 1.0,
+      "nnz": 49508,
+      "sha256": "1206a3fafbf3a3ecd3cb8dd964c6ec8593d83383be479aeb94a370153d876a33"
+    },
+    "W2": {
+      "shape": [
+        113,
+        256
+      ],
+      "dtype_stored": "float64",
+      "finite": true,
+      "min": -1.0,
+      "max": 1.0,
+      "nnz": 24754,
+      "sha256": "178c62533e6c4c4e908b2aa188f2f392d19f54767a8ae6264690518c3ee57f99"
+    }
+  },
+  "weight_load_error": null,
+  "connected": {
+    "W1_nonzero_rows": 222,
+    "W2_nonzero_cols": 222,
+    "n_connected": 222
+  },
+  "dtype_acc_same": false,
+  "notes": "Fourth construction may be mathematically flawed; scored as-is without repair"
+}

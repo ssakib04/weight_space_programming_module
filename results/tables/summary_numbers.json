@@ -1,0 +1,117 @@
+{
+ "modmul": [
+  {
+   "hint": "full",
+   "replayed_v2_reps_0_9": "8/10",
+   "fresh_run2_reps_10_14": "4/5",
+   "successes": 12,
+   "n": 15,
+   "rate": 0.8,
+   "wilson_lo": 0.5481406466534955,
+   "wilson_hi": 0.9295257935638959,
+   "truncated": 2,
+   "wrong_weights": 1,
+   "mean_acc": 0.8002976202095549
+  },
+  {
+   "hint": "partial",
+   "replayed_v2_reps_0_9": "8/10",
+   "fresh_run2_reps_10_14": "5/5",
+   "successes": 13,
+   "n": 15,
+   "rate": 0.8666666666666667,
+   "wilson_lo": 0.6211750079348376,
+   "wilson_hi": 0.9626395301086407,
+   "truncated": 1,
+   "wrong_weights": 1,
+   "mean_acc": 0.900595239798228
+  },
+  {
+   "hint": "none",
+   "replayed_v2_reps_0_9": "8/10",
+   "fresh_run2_reps_10_14": "5/5",
+   "successes": 13,
+   "n": 15,
+   "rate": 0.8666666666666667,
+   "wilson_lo": 0.6211750079348376,
+   "wilson_hi": 0.9626395301086407,
+   "truncated": 1,
+   "wrong_weights": 1,
+   "mean_acc": 0.867261904788514
+  },
+  {
+   "hint": "ALL",
+   "replayed_v2_reps_0_9": "24/30",
+   "fresh_run2_reps_10_14": "14/15",
+   "successes": 38,
+   "n": 45,
+   "rate": 0.8444444444444444,
+   "wilson_lo": 0.712158094887512,
+   "wilson_hi": 0.9225467468867133,
+   "truncated": 4,
+   "wrong_weights": 3,
+   "mean_acc": 0.8560515882654323
+  }
+ ],
+ "failure_modes": [
+  {
+   "task": "modadd",
+   "success": 24,
+   "truncated": 0,
+   "wrong_weights": 6
+  },
+  {
+   "task": "modmul",
+   "success": 38,
+   "truncated": 4,
+   "wrong_weights": 3
+  },
+  {
+   "task": "parity",
+   "success": 30,
+   "truncated": 0,
+   "wrong_weights": 0
+  },
+  {
+   "task": "ALL",
+   "success": 92,
+   "truncated": 4,
+   "wrong_weights": 9
+  }
+ ],
+ "claude_alg_total": {
+  "success": 92,
+  "n": 105,
+  "wilson": [
+   0.7996263614011154,
+   0.9261990582913551
+  ]
+ },
+ "run2": {
+  "spend": 0.7191759999999999,
+  "calls_billed": 17,
+  "api_attempts": 18,
+  "in_tok": 8133,
+  "out_tok": 70291,
+  "by_section": {
+   "B_algo": 0.5895299999999999,
+   "B_cifar": 0.12964599999999998
+  },
+  "elapsed_min": 50.374808661142985,
+  "per_run_cost_sum": 0.848822
+ },
+ "v2": {
+  "spend": 3.0437980000000007,
+  "calls": 101,
+  "elapsed_min": 132.41097875436148
+ },
+ "run1": {
+  "elapsed_min": 159.82189550797145
+ },
+ "local_alg": {
+  "n": 72,
+  "success": 0,
+  "valid": 31,
+  "max_acc": 0.578125
+ }
+}

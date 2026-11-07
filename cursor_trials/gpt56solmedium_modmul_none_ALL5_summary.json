@@ -1,0 +1,83 @@
+{
+  "model": "GPT-5.6 Sol Medium",
+  "task": "modmul",
+  "n": 5,
+  "successes": 5,
+  "wilson95": {
+    "k": 5,
+    "n": 5,
+    "phat": 1.0,
+    "ci95": [
+      0.5655175352168251,
+      1
+    ]
+  },
+  "r0": {
+    "success": true,
+    "exact": {
+      "correct": 12544,
+      "total": 12544,
+      "wrong": 0,
+      "param_dtype": "torch.float32"
+    }
+  },
+  "r1to4": [
+    {
+      "rep": 1,
+      "success": true,
+      "exact_torch": {
+        "correct": 12544,
+        "total": 12544,
+        "wrong": 0,
+        "accuracy": 1.0,
+        "param_dtype": "torch.float32"
+      },
+      "ok": true,
+      "min_margin_raw": 0.0015728473663330078,
+      "n_connected": 8
+    },
+    {
+      "rep": 2,
+      "success": true,
+      "exact_torch": {
+        "correct": 12544,
+        "total": 12544,
+        "wrong": 0,
+        "accuracy": 1.0,
+        "param_dtype": "torch.float32"
+      },
+      "ok": true,
+      "min_margin_raw": 0.0015728473663330078,
+      "n_connected": 8
+    },
+    {
+      "rep": 3,
+      "success": true,
+      "exact_torch": {
+        "correct": 12544,
+        "total": 12544,
+        "wrong": 0,
+        "accuracy": 1.0,
+        "param_dtype": "torch.float32"
+      },
+      "ok": true,
+      "min_margin_raw": 0.0015728473663330078,
+      "n_connected": 8
+    },
+    {
+      "rep": 4,
+      "success": true,
+      "exact_torch": {
+        "correct": 12544,
+        "total": 12544,
+        "wrong": 0,
+        "accuracy": 1.0,
+        "param_dtype": "torch.float32"
+      },
+      "ok": true,
+      "min_margin_raw": 0.0015728473663330078,
+      "n_connected": 8
+    }
+  ],
+  "caveat": "n=5 small; no reliability ranking. Fresh-chat Ask for r1-r4 not newly confirmed."
+}

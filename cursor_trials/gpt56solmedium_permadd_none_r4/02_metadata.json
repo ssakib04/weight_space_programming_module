@@ -1,0 +1,19 @@
+{
+  "channel": "cursor_chat",
+  "model_label_reported": "GPT-5.6 Sol Medium",
+  "mode_fresh_chats_newly_confirmed": false,
+  "date_asia_dhaka_approx": "2026-11-07T00:53+06:00",
+  "task": "permadd",
+  "prompt_level": "none",
+  "rep": 4,
+  "user_visible_index": 5,
+  "batch_source": "t95u",
+  "raw_sha256": "7d26d8e4660a01359b639f7ada77e143275f856ff37127839b12fee04ce0644f",
+  "VAL_matches_frozen": true,
+  "prompt_file_assumed": "START_HERE_permadd_none.txt",
+  "exact_paste_confirmed": false,
+  "construction_notes": {
+    "uses_3_units_per_freq": false,
+    "uses_only_k1_style_8units": true
+  }
+}

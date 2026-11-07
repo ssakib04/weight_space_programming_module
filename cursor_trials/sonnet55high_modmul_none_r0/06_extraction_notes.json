@@ -1,0 +1,12 @@
+{
+  "transparent_manual_extraction": true,
+  "dropped_shell_wrapper": true,
+  "dropped_module_level_selftest": true,
+  "added_imports_for_sandbox": [
+    "numpy as np",
+    "math"
+  ],
+  "imports_note": "Original heredoc had `import numpy as np, math` at module level above the function; function body unchanged.",
+  "numerical_edits": false,
+  "code_edits_to_algorithm": false
+}

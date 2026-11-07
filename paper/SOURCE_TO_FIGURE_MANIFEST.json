@@ -1,0 +1,52 @@
+[
+  {
+    "figure": "fig01_learning_curves_A",
+    "source": "data/A_curves_run1.csv",
+    "note": "mean\u00b1sd over 3 seeds at val-selected LR"
+  },
+  {
+    "figure": "fig02_cursor_3x2",
+    "source": "data/ALL30_per_trial.json",
+    "note": "27/30 audited"
+  },
+  {
+    "figure": "fig03_api_modmul_hints",
+    "source": "tables/final_modmul_combined.csv",
+    "note": ""
+  },
+  {
+    "figure": "fig04_api_failure_taxonomy",
+    "source": "tables/final_claude_failures_list.csv",
+    "note": ""
+  },
+  {
+    "figure": "fig05_open_models_pilot",
+    "source": "data/local_pilot_per_run.csv",
+    "note": ""
+  },
+  {
+    "figure": "fig06_cifar_endpoints",
+    "source": "tables/final_cifar.csv",
+    "note": ""
+  },
+  {
+    "figure": "fig07_conceptual_paths",
+    "source": "conceptual",
+    "note": "not empirical"
+  },
+  {
+    "figure": "fig08_fourier_identity",
+    "source": "algebra + Cursor artifact",
+    "note": ""
+  },
+  {
+    "figure": "fig09_replay_v2_vs_v3",
+    "source": "tables/final_replay_v2_vs_v3.csv",
+    "note": ""
+  },
+  {
+    "figure": "fig10_robustness_modmul",
+    "source": "v3_run1/2 per_run.csv",
+    "note": ""
+  }
+]

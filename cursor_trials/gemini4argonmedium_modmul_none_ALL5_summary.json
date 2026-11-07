@@ -1,0 +1,83 @@
+{
+  "model": "Gemini 4 Argon Medium",
+  "task": "modmul",
+  "n": 5,
+  "successes": 3,
+  "wilson95": {
+    "k": 3,
+    "n": 5,
+    "phat": 0.6,
+    "ci95": [
+      0.2307242812760128,
+      0.882379225767352
+    ]
+  },
+  "r0": {
+    "success": true,
+    "exact": {
+      "correct": 12544,
+      "total": 12544,
+      "wrong": 0,
+      "accuracy": 1.0
+    }
+  },
+  "r1to4": [
+    {
+      "rep": 1,
+      "success": true,
+      "exact_torch": {
+        "correct": 12544,
+        "total": 12544,
+        "wrong": 0,
+        "accuracy": 1.0,
+        "param_dtype": "torch.float32"
+      },
+      "ok": true,
+      "min_margin_raw": 111.9998550415039,
+      "notes": null
+    },
+    {
+      "rep": 2,
+      "success": false,
+      "exact_torch": {
+        "correct": 116,
+        "total": 12544,
+        "wrong": 12428,
+        "accuracy": 0.009247448979591837,
+        "param_dtype": "torch.float32"
+      },
+      "ok": true,
+      "min_margin_raw": -138.8784942626953,
+      "notes": null
+    },
+    {
+      "rep": 3,
+      "success": true,
+      "exact_torch": {
+        "correct": 12544,
+        "total": 12544,
+        "wrong": 0,
+        "accuracy": 1.0,
+        "param_dtype": "torch.float32"
+      },
+      "ok": true,
+      "min_margin_raw": 111.9998550415039,
+      "notes": null
+    },
+    {
+      "rep": 4,
+      "success": false,
+      "exact_torch": {
+        "correct": 3126,
+        "total": 12544,
+        "wrong": 9418,
+        "accuracy": 0.24920280612244897,
+        "param_dtype": "torch.float32"
+      },
+      "ok": true,
+      "min_margin_raw": -56.000022888183594,
+      "notes": "Fourth construction may be mathematically flawed; scored as-is without repair"
+    }
+  ],
+  "caveat": "n=5 small; no reliability ranking. Fresh-chat Ask for r1-r4 not newly confirmed."
+}

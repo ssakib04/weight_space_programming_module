@@ -1,0 +1,63 @@
+{
+  "table": {
+    "Claude Sonnet 5.5 High": {
+      "modmul": 4,
+      "permadd": 5
+    },
+    "Gemini 4 Argon Medium": {
+      "modmul": 3,
+      "permadd": 5
+    },
+    "GPT-5.6 Sol Medium": {
+      "modmul": 5,
+      "permadd": 5
+    }
+  },
+  "total_successes": 27,
+  "total_failures": 3,
+  "total_trials": 30,
+  "failed_trial_ids": [
+    "sonnet55high_modmul_none_r3",
+    "gemini4argonmedium_modmul_none_r2",
+    "gemini4argonmedium_modmul_none_r4"
+  ],
+  "assertions": {
+    "overall_equals_sum_cells": true,
+    "overall_equals_sum_per_trial": true,
+    "n_unique_trial_ids": 30,
+    "n_failed_constructions": 3
+  },
+  "cells_detail": {
+    "Claude Sonnet 5.5 High|modmul": {
+      "successes": 4,
+      "n": 5,
+      "path": "<STUDY_ROOT>/cursor_trials/sonnet55high_modmul_none_ALL5_summary.json"
+    },
+    "Claude Sonnet 5.5 High|permadd": {
+      "successes": 5,
+      "n": 5,
+      "path": "<STUDY_ROOT>/cursor_trials/sonnet55high_permadd_none_ALL5_summary.json"
+    },
+    "Gemini 4 Argon Medium|modmul": {
+      "successes": 3,
+      "n": 5,
+      "path": "<STUDY_ROOT>/cursor_trials/gemini4argonmedium_modmul_none_ALL5_summary.json"
+    },
+    "Gemini 4 Argon Medium|permadd": {
+      "successes": 5,
+      "n": 5,
+      "path": "<STUDY_ROOT>/cursor_trials/gemini4argonmedium_permadd_none_ALL5_summary.json"
+    },
+    "GPT-5.6 Sol Medium|modmul": {
+      "successes": 5,
+      "n": 5,
+      "path": "<STUDY_ROOT>/cursor_trials/gpt56solmedium_modmul_none_ALL5_summary.json"
+    },
+    "GPT-5.6 Sol Medium|permadd": {
+      "successes": 5,
+      "n": 5,
+      "path": "<STUDY_ROOT>/cursor_trials/gpt56solmedium_permadd_none_ALL5_summary.json"
+    }
+  },
+  "note": "No pooled overall Wilson CI; cells are heterogeneous (model\u00d7task). overall = sum(cells) = sum(per-trial)."
+}
